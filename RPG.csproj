@@ -140,6 +140,7 @@
     <Content Include="Assets\karzel_ikona.jpg" />
     <Content Include="Assets\miecz.png" />
     <Content Include="Assets\PanelStartowy_Tło.jpg" />
+    <Content Include="Assets\plus.png" />
     <Content Include="Assets\rozgrywka_tło.jpg" />
     <Content Include="Assets\wojownik.jpg" />
     <Content Include="Assets\wojownik_ikona.jpg" />

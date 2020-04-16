@@ -37,7 +37,7 @@ namespace RPG
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(Rozgrywka));
+            this.Frame.Navigate(typeof(WyborPostaci));
         }
 
         private void Zakoncz_BTN_Click(object sender, RoutedEventArgs e)

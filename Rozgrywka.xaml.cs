@@ -22,6 +22,11 @@ namespace RPG
 
         private void postac_menuItem_Tapped(object sender, TappedRoutedEventArgs e)
         {
+            this.Frame.Navigate(typeof(Rozgrywka));
+        }
+
+        private void NavigationPanel_Wyjdz_Tapped(object sender, TappedRoutedEventArgs e)
+        {
             this.Frame.Navigate(typeof(MainPage));
         }
     }

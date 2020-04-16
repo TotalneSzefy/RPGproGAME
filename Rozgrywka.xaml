@@ -22,7 +22,7 @@
 
         <TextBlock Text="Nick twojej postaci" FontSize="90" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Center"/>
 
-        <NavigationView x:Name="PanelNawigacyjny" OpenPaneLength="250" PaneDisplayMode="Top"  CompactModeThresholdWidth="600" ExpandedModeThresholdWidth="1200">
+        <NavigationView x:Name="PanelNawigacyjny" OpenPaneLength="250" PaneDisplayMode="Top"  CompactModeThresholdWidth="600" ExpandedModeThresholdWidth="1200" Grid.ColumnSpan="2">
             <NavigationView.MenuItems>
                 <NavigationViewItem Tag="domek">
                     <StackPanel>
@@ -56,16 +56,104 @@
                         </RelativePanel>
                     </StackPanel>
                 </NavigationViewItem>
+                <NavigationViewItem x:Name="NavigationPanel_Wyjdz" Tapped="NavigationPanel_Wyjdz_Tapped">
+                    <StackPanel>
+                        <RelativePanel>
+                            <Image x:Name="Wyjdz" Source="Assets\\karzel_ikona.jpg" Height="30" Width="30"/>
+                            <TextBlock Text="Zapisz i wyjdź" RelativePanel.RightOf="Wyjdz" FontSize="20" Margin="10,5,0,0"  />
+                        </RelativePanel>
+                    </StackPanel>
+                </NavigationViewItem>
+
             </NavigationView.MenuItems>
         </NavigationView>
 
         <!--ekwipunek założony-->
-        <RelativePanel  HorizontalAlignment="Center" Grid.Row="1" Grid.Column="0" Background="#720C0B14">
-            <Image x:Name="tarcza" Source="Assets/miecz.png" Width="120" Height="120" />
-            <Image x:Name="ObrazPostaci" RelativePanel.RightOf="tarcza"  Source="Assets/karzel.jpg" HorizontalAlignment="Center" VerticalAlignment="Center" Width="auto"/>
-            <Image x:Name="miecz" Source="Assets/miecz.png" Width="120" Height="120" RelativePanel.RightOf="ObrazPostaci" />
-            <Image x:Name="lel" Source="Assets/miecz.png" Width="120" Height="120" RelativePanel.RightOf="ObrazPostaci" />
+        <RelativePanel  BorderThickness="10" BorderBrush="Black"  HorizontalAlignment="Center" Grid.Row="1" Grid.Column="0" Background="#720C0B14">
+            <Image x:Name="helm" Source="Assets/miecz.png" Width="120" Height="120" />
+            <Image x:Name="zbroja" Source="Assets/miecz.png" Width="120" Height="120" RelativePanel.Below="helm" Margin="0,20,0,0" />
+            <Image x:Name="kalesony" Source="Assets/miecz.png" Width="120" Height="120" RelativePanel.Below="zbroja" Margin="0,20,0,0"/>
+            <Image x:Name="ObrazPostaci" RelativePanel.RightOf="helm"  Source="Assets/karzel.jpg" HorizontalAlignment="Center" VerticalAlignment="Center" Width="auto"/>
+
+            <Image x:Name="miecz" RelativePanel.RightOf="ObrazPostaci" Source="Assets/miecz.png" Width="120" Height="120" />
+            <Image x:Name="tarcza" Source="Assets/miecz.png" Width="120" Height="120" RelativePanel.Below="miecz" RelativePanel.RightOf="ObrazPostaci" Margin="0,20,0,0"/>
+            <Image x:Name="buty" Source="Assets/miecz.png" Width="120" Height="120" RelativePanel.Below="tarcza" RelativePanel.RightOf="ObrazPostaci" Margin="0,20,0,0"/>
         </RelativePanel>
+
+        <StackPanel BorderBrush="#FF708090" BorderThickness="4" Grid.ColumnSpan="2" Grid.Row="3" Background="#3F001E1E" Width="auto" Height="auto" Margin="100,10,100,10">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="5*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="5*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <TextBlock x:Name="Statystyki" Text="Statystyki:" FontSize="60" Margin="10,10,10,10" Grid.Row="0" Grid.Column="0">
+                    <TextBlock.Foreground>
+                        <AcrylicBrush TintColor="#CCFFFFFF"/>
+                    </TextBlock.Foreground>
+                </TextBlock>
+                <TextBlock x:Name="Bonusy" Text="Bonusy:" FontSize="60" Margin="10,10,10,10" Grid.Row="0" Grid.Column="3">
+                    <TextBlock.Foreground>
+                        <AcrylicBrush TintColor="#CCFFFFFF"/>
+                    </TextBlock.Foreground>
+                </TextBlock>
+                <TextBlock x:Name="Sila" Text="Siła:" FontSize="40" Margin="10,10,10,10" Grid.Row="1" Grid.Column="0" Foreground="#FFE0D1D1" />
+                <TextBlock x:Name="Int" Text="Inteligencja:" FontSize="40" Margin="10,10,10,10" RelativePanel.Below="Sila" Grid.Row="2" Grid.Column="0" Foreground="#FFE0D1D1"/>
+                <TextBlock x:Name="Zreka" Text="Zrecznosc:" FontSize="40" Margin="10,10,10,10" RelativePanel.Below="Int" Grid.Row="3" Grid.Column="0" Foreground="#FFE0D1D1"/>
+                <TextBlock x:Name="Wytrzymalosc" Text="Wytrzymalosc:" FontSize="40" Margin="10,10,10,10" RelativePanel.Below="Int" Grid.Row="4" Grid.Column="0" Foreground="#FFE0D1D1"/>
+
+
+                <TextBlock x:Name="SilaWartosc" Text="10" FontSize="40" Margin="10,10,10,10" Grid.Row="1" Grid.Column="1" Foreground="#FFB8A94F"/>
+                <TextBlock x:Name="IntWartosc" Text="10" FontSize="40" Margin="10,10,10,10" RelativePanel.Below="Sila" Grid.Row="2" Grid.Column="1" Foreground="#FFB8A94F"/>
+                <TextBlock x:Name="ZrekaWartosc" Text="10" FontSize="40" Margin="10,10,10,10" RelativePanel.Below="Int" Grid.Row="3" Grid.Column="1" Foreground="#FFB8A94F"/>
+                <TextBlock x:Name="WytrzymaloscWartosc" Text="10" FontSize="40" Margin="10,10,10,10" RelativePanel.Below="Int" Grid.Row="4" Grid.Column="1" Foreground="#FFB8A94F"/>
+
+
+                <Button x:Name="DodajSila" Height="50" Width="50" FontSize="40" Grid.Row="1" Grid.Column="2">
+                    <Button.Background>
+                        <ImageBrush ImageSource="Assets/plus.png" Stretch="Uniform" />
+                    </Button.Background>
+                </Button>
+                <Button x:Name="DodajInt" Height="50" Width="50"  FontSize="40" Margin="10,10,10,10" RelativePanel.Below="Sila" Grid.Row="2" Grid.Column="2">
+                    <Button.Background>
+                        <ImageBrush ImageSource="Assets/plus.png" Stretch="Uniform" />
+                    </Button.Background>
+                </Button>
+                <Button Height="50" Width="50" x:Name="DodajZreka" FontSize="40" Margin="10,10,10,10" RelativePanel.Below="Int" Grid.Row="3" Grid.Column="2">
+                    <Button.Background>
+                        <ImageBrush ImageSource="Assets/plus.png" Stretch="Uniform" />
+                    </Button.Background>
+                </Button>
+                <Button Height="50" Width="50" x:Name="DodajWytrzymalosc" FontSize="40" Margin="10,10,10,10" RelativePanel.Below="Int" Grid.Row="4" Grid.Column="2">
+                    <Button.Background>
+                        <ImageBrush ImageSource="Assets/plus.png" Stretch="Uniform" />
+                    </Button.Background>
+                </Button>
+
+
+                <TextBlock x:Name="Obrazenia" Text="Obrazenia:" FontSize="40" Margin="10,10,10,10" Grid.Row="1" Grid.Column="3" Foreground="#FFFFF85B" />
+                <TextBlock x:Name="Obrona" Text="Obrona:" FontSize="40" Margin="10,10,10,10" RelativePanel.Below="Sila" Grid.Row="2" Grid.Column="3" Foreground="#FFFFF85B"/>
+                <TextBlock x:Name="SzansaTrafienia" Text="Szansa trafienia:" FontSize="40" Margin="10,10,10,10" RelativePanel.Below="Int" Grid.Row="3" Grid.Column="3" Foreground="#FFFFF85B"/>
+                <TextBlock x:Name="SzansaNaUnik" Text="Szansa na unik:" FontSize="40" Margin="10,10,10,10" RelativePanel.Below="Int" Grid.Row="4" Grid.Column="3" Foreground="#FFFFF85B"/>
+
+                <TextBlock x:Name="AtakWartosc" Text="10" FontSize="40" Margin="10,10,10,10" Grid.Row="1" Grid.Column="4" Foreground="#FFFFDB00"/>
+                <TextBlock x:Name="ObronaWartosc" Text="10" FontSize="40" Margin="10,10,10,10" RelativePanel.Below="Sila" Grid.Row="2" Grid.Column="4" Foreground="#FFFFDB00"/>
+                <TextBlock x:Name="SzansaTrafieniaWartosc" Text="10" FontSize="40" Margin="10,10,10,10" RelativePanel.Below="Int" Grid.Row="3" Grid.Column="4" Foreground="#FFFFDB00"/>
+                <TextBlock x:Name="SzansaNaUnikWartosc" Text="10" FontSize="40" Margin="10,10,10,10" RelativePanel.Below="Int" Grid.Row="4" Grid.Column="4" Foreground="#FFFFDB00"/>
+
+            </Grid>
+        </StackPanel>
+
+
 
 
     </Grid>

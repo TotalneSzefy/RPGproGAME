@@ -30,55 +30,51 @@
         <Button Grid.Row="5" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="40,40,100,40"
                 Content="Powrot" x:Name="wroc_button" Click="wroc_button_Click" Grid.Column="2"/>
         <Button Grid.Row="4" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="100,40,40,40"
-                Content="Wybierz" x:Name="wybierz_button"/>
+                Content="Wybierz" x:Name="wybierz_button" Tapped="wybierz_button_Tapped"/>
 
-        <Button x:Name="Wojownik_button" Grid.Row="1" HorizontalAlignment="Left" Height="130" Width="350"
-                Margin="80,20,20,20" BorderThickness="5" BorderBrush="Black" Grid.Column="0">
-            <Button.Background>
-                <ImageBrush ImageSource="Assets//karzel_ikona.jpg" Stretch="Fill"/>
-            </Button.Background>
-        </Button>
-        <Button x:Name="Zwiadowca_button" Grid.Row="2" HorizontalAlignment="Right" Height="130" Width="350"
-                Margin="20,20,80,20" BorderThickness="5" BorderBrush="Black" Grid.Column="2"
-                >
-            <Button.Background>
-                <ImageBrush ImageSource="Assets//wojownik_ikona.jpg" Stretch="Fill"/>
-            </Button.Background>
-        </Button>
-        <Button x:Name="Karzel_button" Grid.Row="3" HorizontalAlignment="Left" Height="130" Width="350"
-                Margin="80,20,20,20" BorderThickness="5" BorderBrush="Black" Grid.Column="0">
-            <Button.Background>
-                <ImageBrush ImageSource="Assets//zwiadowca_ikona.jpg" Stretch="Fill"/>
-            </Button.Background>
-        </Button>
-        <TextBlock Text="Karzel" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"
-                   FontSize="90" Height="auto" Width="auto"/>
-        <TextBlock Text="Wojownik" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"
-                   FontSize="90" Height="auto" Width="auto"/>
-        <TextBlock Text="Zwiadowca" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"
-                   FontSize="90" Height="auto" Width="auto"/>
+        <Image x:Name="Karzel_Image" Grid.Row="1" HorizontalAlignment="Left" Height="130" Width="350"
+                Margin="80,20,20,20" Source="Assets//karzel_ikona.jpg" Stretch="Fill" Grid.Column="0">
+        </Image>
 
-        <StackPanel Grid.Row="1" Grid.Column="2" Background="#3F000000" BorderThickness="4" BorderBrush="Black" Margin="20,20,20,20">
+        <Image  x:Name="Wojownik_Image" Grid.Row="2" HorizontalAlignment="Left" Height="130" Width="350"
+                Margin="80,20,20,20" Source="Assets//wojownik_ikona.jpg" Stretch="Fill" Grid.Column="2">
+        </Image>
+
+        <Image x:Name="Zwiadowca_Image" Grid.Row="3" HorizontalAlignment="Left" Height="130" Width="350"
+                Margin="80,20,20,20" Source="Assets//zwiadowca_ikona.jpg" Stretch="Fill" Grid.Column="0">
+        </Image>
+
+        <Button Content="Karzel" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"
+                   FontSize="70" Height="auto" Width="auto"/>
+        <Button Content="Wojownik" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"
+                   FontSize="70" Height="auto" Width="auto"/>
+        <Button Content="Zwiadowca" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"
+                   FontSize="70" Height="auto" Width="auto"/>
+
+        <StackPanel Grid.Row="1" Grid.Column="2" Background="#3F000000" BorderThickness="4" BorderBrush="Black" Margin="20,7,20,7">
             <RelativePanel>
-                <TextBlock x:Name="SilaKarzel" FontSize="40" Text="Siła:    12 " />
-                <TextBlock x:Name="InteligencjaKarzel" FontSize="40" Text="Inteligencja:    0 " RelativePanel.Below="SilaKarzel"/>
-                <TextBlock x:Name="ZrecznoscKarzel" FontSize="40" Text="zrecznosc:   3" RelativePanel.Below="InteligencjaKarzel"/>
+                <TextBlock x:Name="SilaKarzel" FontSize="35" Text="Siła:    12 " />
+                <TextBlock x:Name="InteligencjaKarzel" FontSize="35" Text="Inteligencja:    0 " RelativePanel.Below="SilaKarzel"/>
+                <TextBlock x:Name="ZrecznoscKarzel" FontSize="35" Text="zrecznosc:   3" RelativePanel.Below="InteligencjaKarzel"/>
+                <TextBlock x:Name="WytrzymaloscKarzel" FontSize="35" Text="wytrzymalosc:   5" RelativePanel.Below="ZrecznoscKarzel"/>
             </RelativePanel>
         </StackPanel>
 
-        <StackPanel Grid.Row="2" Grid.Column="0" Background="#3F000000" BorderThickness="4" BorderBrush="Black" Margin="20,20,20,20">
+        <StackPanel Grid.Row="2" Grid.Column="0" Background="#3F000000" BorderThickness="4" BorderBrush="Black" Margin="20,7,20,7">
             <RelativePanel>
-                <TextBlock x:Name="SilaWoj" FontSize="40" Text="Siła:    7" />
-                <TextBlock x:Name="InteligencjaWoj" FontSize="40" Text="Inteligencja:      4 " RelativePanel.Below="SilaWoj"/>
-                <TextBlock x:Name="ZrecznoscWoj" FontSize="40" Text="zrecznosc:     4 " RelativePanel.Below="InteligencjaWoj"/>
+                <TextBlock x:Name="SilaWoj" FontSize="35" Text="Siła:    7" />
+                <TextBlock x:Name="InteligencjaWoj" FontSize="35" Text="Inteligencja:      4 " RelativePanel.Below="SilaWoj"/>
+                <TextBlock x:Name="ZrecznoscWoj" FontSize="35" Text="zrecznosc:     4 " RelativePanel.Below="InteligencjaWoj"/>
+                <TextBlock x:Name="WytrzymaloscWojownik" FontSize="35" Text="wytrzymalosc:   5" RelativePanel.Below="ZrecznoscWoj"/>
             </RelativePanel>
         </StackPanel>
 
-        <StackPanel Grid.Row="3" Grid.Column="2" Background="#3F000000" BorderThickness="4" BorderBrush="Black" Margin="20,20,20,20">
+        <StackPanel Grid.Row="3" Grid.Column="2" Background="#3F000000" BorderThickness="4" BorderBrush="Black" Margin="20,7,20,7">
             <RelativePanel>
-                <TextBlock x:Name="SilaZwiad" FontSize="40" Text="Siła:     5" />
-                <TextBlock x:Name="InteligencjaZwiad" FontSize="40" Text="Inteligencja:     5 " RelativePanel.Below="SilaZwiad"/>
-                <TextBlock x:Name="ZrecznoscZwiad" FontSize="40" Text="zrecznosc:     5 " RelativePanel.Below="InteligencjaZwiad"/>
+                <TextBlock x:Name="SilaZwiad" FontSize="35" Text="Siła:     5" />
+                <TextBlock x:Name="InteligencjaZwiad" FontSize="35" Text="Inteligencja:     5 " RelativePanel.Below="SilaZwiad"/>
+                <TextBlock x:Name="ZrecznoscZwiad" FontSize="35" Text="zrecznosc:     5 " RelativePanel.Below="InteligencjaZwiad"/>
+                <TextBlock x:Name="WytrzymaloscZwiad" FontSize="35" Text="wytrzymalosc:   5" RelativePanel.Below="ZrecznoscZwiad"/>
             </RelativePanel>
         </StackPanel>
         <TextBlock Grid.Row="4" Grid.Column="1" Margin="20,20,20,20" VerticalAlignment="Top" FontSize="48" Text="Nazwa postaci:"/>

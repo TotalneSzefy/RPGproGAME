@@ -35,5 +35,10 @@ namespace RPG
             }
 
         }
+
+        private void wybierz_button_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(Rozgrywka));
+        }
     }
 }
