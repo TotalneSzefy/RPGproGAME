@@ -1,0 +1,36 @@
+﻿<Page
+    x:Class="RPG.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:RPG"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+   
+    <Grid>
+        <Grid.ColumnDefinitions>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        
+        <Image Source="Assets//PanelStartowy_Tło.jpg" Stretch="Fill" Grid.RowSpan="4" />
+       
+        <TextBlock Grid.Row="0" FontSize="180" Text="Muj   RPG" 
+                   HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,50,0,0" FontFamily="Assets\czcionka.ttf#Breathe Fire II" />
+
+        <Button Grid.Row="1" Content="Nowa gra" Click="Button_Click"/>
+        <Button Grid.Row="2" Content="Wznów"/>
+
+        <TextBlock Text="By SBX and JohnyTea" Grid.Row="4" HorizontalAlignment="Right" FontSize="45" VerticalAlignment="Bottom"
+                   FontFamily="Assets\czcionka.ttf#Breathe Fire II"/>
+
+
+    </Grid>
+    
+</Page>

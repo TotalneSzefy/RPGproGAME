@@ -1,0 +1,24 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:RPG">
+    <Style TargetType="Button">
+        <Setter Property="Background" Value="#7F000000"/>
+        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="BorderBrush" Value="Black"/>
+        <Setter Property="BorderThickness" Value="2"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Height" Value="100"/>
+        <Setter Property="Width" Value="400"/>
+        <Setter Property="FontSize" Value="68"/>
+        <Setter Property="FontFamily" Value="Assets\czcionka.ttf#Breathe Fire II"/>
+    </Style>
+    <Style TargetType="TextBlock">
+        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="FontFamily" Value="Assets\czcionka.ttf#Breathe Fire II"/>
+    </Style>
+
+</ResourceDictionary>

@@ -1,0 +1,90 @@
+﻿<Page
+    x:Class="RPG.WyborPostaci"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:RPG"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        
+        
+        <Image Source="Assets//WyborPostaci_Tło.jpg" Stretch="Fill" Grid.RowSpan="5" Grid.ColumnSpan="3"/>
+        <TextBlock Grid.Row="0" FontSize="180" Text="Wybierz postac" Grid.ColumnSpan="3"
+                   HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,50,0,0" FontFamily="Assets\czcionka.ttf#Breathe Fire II" />
+        <Button Grid.Row="5" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="40,40,100,40"
+                Content="Powrot" x:Name="wroc_button" Click="wroc_button_Click" Grid.Column="2"/>
+        <Button Grid.Row="4" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="100,40,40,40"
+                Content="Wybierz" x:Name="wybierz_button"/>
+
+        <Button x:Name="Wojownik_button" Grid.Row="1" HorizontalAlignment="Left" Height="130" Width="350"
+                Margin="80,20,20,20" BorderThickness="5" BorderBrush="Black" Grid.Column="0">
+            <Button.Background>
+                <ImageBrush ImageSource="Assets//karzel_ikona.jpg" Stretch="Fill"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="Zwiadowca_button" Grid.Row="2" HorizontalAlignment="Right" Height="130" Width="350"
+                Margin="20,20,80,20" BorderThickness="5" BorderBrush="Black" Grid.Column="2"
+                >
+            <Button.Background>
+                <ImageBrush ImageSource="Assets//wojownik_ikona.jpg" Stretch="Fill"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="Karzel_button" Grid.Row="3" HorizontalAlignment="Left" Height="130" Width="350"
+                Margin="80,20,20,20" BorderThickness="5" BorderBrush="Black" Grid.Column="0">
+            <Button.Background>
+                <ImageBrush ImageSource="Assets//zwiadowca_ikona.jpg" Stretch="Fill"/>
+            </Button.Background>
+        </Button>
+        <TextBlock Text="Karzel" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"
+                   FontSize="90" Height="auto" Width="auto"/>
+        <TextBlock Text="Wojownik" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"
+                   FontSize="90" Height="auto" Width="auto"/>
+        <TextBlock Text="Zwiadowca" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"
+                   FontSize="90" Height="auto" Width="auto"/>
+
+        <StackPanel Grid.Row="1" Grid.Column="2" Background="#3F000000" BorderThickness="4" BorderBrush="Black" Margin="20,20,20,20">
+            <RelativePanel>
+                <TextBlock x:Name="SilaKarzel" FontSize="40" Text="Siła:    12 " />
+                <TextBlock x:Name="InteligencjaKarzel" FontSize="40" Text="Inteligencja:    0 " RelativePanel.Below="SilaKarzel"/>
+                <TextBlock x:Name="ZrecznoscKarzel" FontSize="40" Text="zrecznosc:   3" RelativePanel.Below="InteligencjaKarzel"/>
+            </RelativePanel>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Grid.Column="0" Background="#3F000000" BorderThickness="4" BorderBrush="Black" Margin="20,20,20,20">
+            <RelativePanel>
+                <TextBlock x:Name="SilaWoj" FontSize="40" Text="Siła:    7" />
+                <TextBlock x:Name="InteligencjaWoj" FontSize="40" Text="Inteligencja:      4 " RelativePanel.Below="SilaWoj"/>
+                <TextBlock x:Name="ZrecznoscWoj" FontSize="40" Text="zrecznosc:     4 " RelativePanel.Below="InteligencjaWoj"/>
+            </RelativePanel>
+        </StackPanel>
+
+        <StackPanel Grid.Row="3" Grid.Column="2" Background="#3F000000" BorderThickness="4" BorderBrush="Black" Margin="20,20,20,20">
+            <RelativePanel>
+                <TextBlock x:Name="SilaZwiad" FontSize="40" Text="Siła:     5" />
+                <TextBlock x:Name="InteligencjaZwiad" FontSize="40" Text="Inteligencja:     5 " RelativePanel.Below="SilaZwiad"/>
+                <TextBlock x:Name="ZrecznoscZwiad" FontSize="40" Text="zrecznosc:     5 " RelativePanel.Below="InteligencjaZwiad"/>
+            </RelativePanel>
+        </StackPanel>
+        <TextBlock Grid.Row="4" Grid.Column="1" Margin="20,20,20,20" VerticalAlignment="Top" FontSize="48" Text="Nazwa postaci:"/>
+        <TextBox x:Name="NazwaPostaci_TB" Grid.Row="4" Grid.Column="1" Margin="20,20,20,20" VerticalAlignment="Bottom" Height="80"
+                 FontSize="60" HorizontalAlignment="Center" Width="400"
+                 FontFamily="Assets\czcionka.ttf#Breathe Fire II"/>
+
+    </Grid>
+</Page>
