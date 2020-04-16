@@ -119,6 +119,17 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Dane\Bohater.cs" />
+    <Compile Include="Dane\Broń.cs" />
+    <Compile Include="Dane\Buty.cs" />
+    <Compile Include="Dane\Hełm.cs" />
+    <Compile Include="Dane\Postać.cs" />
+    <Compile Include="Dane\Potwór.cs" />
+    <Compile Include="Dane\Przedmiot.cs" />
+    <Compile Include="Dane\Spodnie.cs" />
+    <Compile Include="Dane\Tarcza.cs" />
+    <Compile Include="Dane\Użytkowe.cs" />
+    <Compile Include="Dane\Zbroja.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -184,6 +195,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\czcionka.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Logika\" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
