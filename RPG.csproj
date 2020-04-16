@@ -123,6 +123,9 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rozgrywka.xaml.cs">
+      <DependentUpon>Rozgrywka.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WyborPostaci.xaml.cs">
       <DependentUpon>WyborPostaci.xaml</DependentUpon>
     </Compile>
@@ -135,7 +138,9 @@
   <ItemGroup>
     <Content Include="Assets\Karzel.jpg" />
     <Content Include="Assets\karzel_ikona.jpg" />
+    <Content Include="Assets\miecz.png" />
     <Content Include="Assets\PanelStartowy_Tło.jpg" />
+    <Content Include="Assets\rozgrywka_tło.jpg" />
     <Content Include="Assets\wojownik.jpg" />
     <Content Include="Assets\wojownik_ikona.jpg" />
     <Content Include="Assets\WyborPostaci_Tło.jpg" />
@@ -162,6 +167,10 @@
     <Page Include="MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Rozgrywka.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="WyborPostaci.xaml">
       <SubType>Designer</SubType>

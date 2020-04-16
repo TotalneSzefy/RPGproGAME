@@ -1,0 +1,74 @@
+﻿<Page
+    x:Class="RPG.Rozgrywka"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:RPG"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+        <Image Source="Assets//rozgrywka_Tło.jpg" Stretch="Fill" Grid.ColumnSpan="2" Grid.RowSpan="3" />
+
+        <TextBlock Text="Nick twojej postaci" FontSize="90" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+
+        <NavigationView x:Name="PanelNawigacyjny" OpenPaneLength="250" PaneDisplayMode="Top"  CompactModeThresholdWidth="600" ExpandedModeThresholdWidth="1200">
+            <NavigationView.MenuItems>
+                <NavigationViewItem Tag="domek">
+                    <StackPanel>
+                        <RelativePanel>
+                            <Image x:Name="obrazek1" Source="Assets\\karzel_ikona.jpg" Height="30" Width="30"/>
+                            <TextBlock x:Name="postac_menuItem" Text="Postac" RelativePanel.RightOf="obrazek1" FontSize="20" Margin="10,5,0,0" RightTapped="postac_menuItem_RightTapped" Tapped="postac_menuItem_Tapped"  />
+                        </RelativePanel>
+                    </StackPanel>
+                </NavigationViewItem>
+                <NavigationViewItem Tag="domek">
+                    <StackPanel>
+                        <RelativePanel>
+                            <Image x:Name="obrazek2" Source="Assets\\karzel_ikona.jpg" Height="30" Width="30"/>
+                            <TextBlock Text="Karczma" RelativePanel.RightOf="obrazek2" FontSize="20" Margin="10,5,0,0"  />
+                        </RelativePanel>
+                    </StackPanel>
+                </NavigationViewItem>
+                <NavigationViewItem Tag="domek">
+                    <StackPanel>
+                        <RelativePanel>
+                            <Image x:Name="obrazek3" Source="Assets\\karzel_ikona.jpg" Height="30" Width="30"/>
+                            <TextBlock Text="Katakumby" RelativePanel.RightOf="obrazek3" FontSize="20" Margin="10,5,0,0"  />
+                        </RelativePanel>
+                    </StackPanel>
+                </NavigationViewItem>
+                <NavigationViewItem Tag="domek">
+                    <StackPanel>
+                        <RelativePanel>
+                            <Image x:Name="obrazek4" Source="Assets\\karzel_ikona.jpg" Height="30" Width="30"/>
+                            <TextBlock Text="Dungeony" RelativePanel.RightOf="obrazek4" FontSize="20" Margin="10,5,0,0"  />
+                        </RelativePanel>
+                    </StackPanel>
+                </NavigationViewItem>
+            </NavigationView.MenuItems>
+        </NavigationView>
+
+        <!--ekwipunek założony-->
+        <RelativePanel  HorizontalAlignment="Center" Grid.Row="1" Grid.Column="0" Background="#720C0B14">
+            <Image x:Name="tarcza" Source="Assets/miecz.png" Width="120" Height="120" />
+            <Image x:Name="ObrazPostaci" RelativePanel.RightOf="tarcza"  Source="Assets/karzel.jpg" HorizontalAlignment="Center" VerticalAlignment="Center" Width="auto"/>
+            <Image x:Name="miecz" Source="Assets/miecz.png" Width="120" Height="120" RelativePanel.RightOf="ObrazPostaci" />
+            
+        </RelativePanel>
+
+
+    </Grid>
+
+
+</Page>
