@@ -64,7 +64,7 @@
             <Image x:Name="tarcza" Source="Assets/miecz.png" Width="120" Height="120" />
             <Image x:Name="ObrazPostaci" RelativePanel.RightOf="tarcza"  Source="Assets/karzel.jpg" HorizontalAlignment="Center" VerticalAlignment="Center" Width="auto"/>
             <Image x:Name="miecz" Source="Assets/miecz.png" Width="120" Height="120" RelativePanel.RightOf="ObrazPostaci" />
-            
+            <Image x:Name="lel" Source="Assets/miecz.png" Width="120" Height="120" RelativePanel.RightOf="ObrazPostaci" />
         </RelativePanel>
 
 
