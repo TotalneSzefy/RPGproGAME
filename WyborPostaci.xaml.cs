@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RPG.Dane;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -43,6 +44,42 @@ namespace RPG
         private void wybierz_button_Tapped(object sender, TappedRoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(Rozgrywka));
+        }
+
+        private void Karzel_Clik(object sender, RoutedEventArgs e)
+        {
+            if (!String.IsNullOrEmpty(NazwaPostaci_TB.Text))
+            {
+                string imie = NazwaPostaci_TB.Text;
+                Bohater klasa = new Bohater(imie, "ms-appx:///Assets//Karzel.jpg", 1, 100, 12, 0, 3, 5);
+                otworzScanaRozgrywka(klasa);
+            }
+            
+        }
+
+        private void Wojownik_Clik(object sender, RoutedEventArgs e)
+        {
+            if (!String.IsNullOrEmpty(NazwaPostaci_TB.Text))
+            {
+                string imie = NazwaPostaci_TB.Text;
+                Bohater klasa = new Bohater(imie, "ms-appx:///Assets//wojownik.jpg", 1, 100, 7, 4, 4, 5);
+                otworzScanaRozgrywka(klasa);
+            }
+        }
+
+        private void Zwiadowca_Click(object sender, RoutedEventArgs e)
+        {
+            if (!String.IsNullOrEmpty(NazwaPostaci_TB.Text))
+            {
+                string imie = NazwaPostaci_TB.Text;
+                Bohater klasa = new Bohater(imie, "ms-appx:///Assets//Zwiadowca.jpg", 1, 100, 5, 5, 5, 5);
+                otworzScanaRozgrywka(klasa);
+            }
+        }
+
+        void otworzScanaRozgrywka(Bohater klasa)
+        {
+            this.Frame.Navigate(typeof(Rozgrywka),klasa);
         }
        
       

@@ -45,12 +45,12 @@
                  Source="Assets//zwiadowca_ikona.jpg" Stretch="Fill" Grid.Column="0" Margin="10,10,10,10">
         </Image>
 
-        <Button Content="Karzel" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center"
-                   FontSize="60" Height="auto" Width="auto"/>
-        <Button Content="Wojownik" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center"
-                   FontSize="60" Height="auto" Width="auto"/>
-        <Button Content="Zwiadowca" Grid.Row="3" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center"
-                   FontSize="60" Height="auto" Width="auto"/>
+        <Button Content="Karzel" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"
+                   FontSize="70" Height="auto" Width="auto" Click="Karzel_Clik" />
+        <Button Content="Wojownik" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"
+                   FontSize="70" Height="auto" Width="auto" Click="Wojownik_Clik"/>
+        <Button Content="Zwiadowca" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"
+                   FontSize="70" Height="auto" Width="auto" Click="Zwiadowca_Click"/>
 
         <StackPanel Grid.Row="1" Grid.Column="1" Background="#3F000000" BorderThickness="3" BorderBrush="Black" Width="auto" Height="auto" Margin="10,10,10,10" >
             <RelativePanel  >
