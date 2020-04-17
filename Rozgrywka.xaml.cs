@@ -29,5 +29,10 @@ namespace RPG
         {
             this.Frame.Navigate(typeof(MainPage));
         }
+
+        private void Karczma_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(Karczma));
+        }
     }
 }

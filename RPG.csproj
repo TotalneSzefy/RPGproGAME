@@ -130,6 +130,9 @@
     <Compile Include="Dane\Tarcza.cs" />
     <Compile Include="Dane\Użytkowe.cs" />
     <Compile Include="Dane\Zbroja.cs" />
+    <Compile Include="Karczma.xaml.cs">
+      <DependentUpon>Karczma.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -147,9 +150,18 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\karczma.jpg" />
+    <Content Include="Assets\karczma2.png" />
+    <Content Include="Assets\karczma3.png" />
     <Content Include="Assets\Karzel.jpg" />
     <Content Include="Assets\karzel_ikona.jpg" />
     <Content Include="Assets\miecz.png" />
+    <Content Include="Assets\NPCimages\buty.png" />
+    <Content Include="Assets\NPCimages\helm.png" />
+    <Content Include="Assets\NPCimages\miecz.png" />
+    <Content Include="Assets\NPCimages\spodnie.png" />
+    <Content Include="Assets\NPCimages\tarcza.png" />
+    <Content Include="Assets\NPCimages\zbroja.png" />
     <Content Include="Assets\PanelStartowy_Tło.jpg" />
     <Content Include="Assets\plus.png" />
     <Content Include="Assets\rozgrywka_tło.jpg" />
@@ -172,6 +184,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Karczma.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="KontrolkiDictionary.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

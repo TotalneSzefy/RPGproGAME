@@ -32,7 +32,7 @@
                         </RelativePanel>
                     </StackPanel>
                 </NavigationViewItem>
-                <NavigationViewItem Tag="domek">
+                <NavigationViewItem x:Name="Karczma" Tapped="Karczma_Tapped">
                     <StackPanel>
                         <RelativePanel>
                             <Image x:Name="obrazek2" Source="Assets\\karzel_ikona.jpg" Height="30" Width="30"/>
@@ -152,7 +152,19 @@
 
             </Grid>
         </StackPanel>
-
+        <ListBox Margin="50,20,100,10" Grid.Column="1" Grid.Row="1" ItemsSource="{Binding listPerson}"   Name="listBoxPerson" Background="#59000000">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Height="50">
+                        <RelativePanel>
+                            <TextBlock x:Name="imieBlock" Text="{Binding Imie}" FontSize="32"/>
+                            <TextBlock x:Name="nazwiskoBlock" Text="{Binding Nazwisko}" RelativePanel.RightOf="imieBlock" Margin="5,0,0,0" FontSize="32"/>
+                            <Image Source="{Binding Zdjecie}" RelativePanel.RightOf="nazwiskoBlock" Height="40" Width="40" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="20,0,0,0"/>
+                        </RelativePanel>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
 
 
 
