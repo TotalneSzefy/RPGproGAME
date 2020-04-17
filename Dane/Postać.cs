@@ -7,105 +7,44 @@ using System.Threading.Tasks;
 
 namespace RPG.Dane 
 {
-    class Postać : INotifyPropertyChanged
+    class Postać
     {
+        #region Pola
         string imie;
         string sciezkaIkony;
         int poziom;
         int życie;
 
-        int obrażenia;
+        int obrazenia;
         int obrona;
         int szansaUnik;
         int szansaTrafienia;
+        #endregion
+        public string Imie { get => imie; set => imie = value; }
+        public string SciezkaIkony { get => sciezkaIkony; set => sciezkaIkony = value; }
+        public int Poziom { get => poziom; set => poziom = value; }
+        public int Życie { get => życie; set => życie = value; }
+        public int Obrazenia { get => obrazenia; set => obrazenia = value; }
+        public int Obrona { get => obrona; set => obrona = value; }
+        public int SzansaUnik { get => szansaUnik; set => szansaUnik = value; }
+        public int SzansaTrafienia { get => szansaTrafienia; set => szansaTrafienia = value; }
 
-        public event PropertyChangedEventHandler PropertyChanged;
 
-        public string GetImie()
+        #region Konstruktory
+
+        public Postać(string imie, string sciezkaIkony, int poziom, int życie)
         {
-            return imie;
+            this.Imie = imie;
+            this.SciezkaIkony = sciezkaIkony;
+            this.Poziom = poziom;
+            this.Życie = życie;
         }
 
-        public void SetImie(string value)
-        {
-            imie = value;
-            PropertyChanged(this, new PropertyChangedEventArgs("Imie"));
-        }
+        #endregion
 
-        public string GetSciezkaIkony()
-        {
-            return sciezkaIkony;
-        }
+        
 
-        public void SetSciezkaIkony(string value)
-        {
-            sciezkaIkony = value;
-        }
+        
 
-        public int GetPoziom()
-        {
-            return poziom;
-        }
-
-        public void SetPoziom(int value)
-        {
-            poziom = value;
-            PropertyChanged(this, new PropertyChangedEventArgs("Poziom"));
-        }
-
-        public int GetŻycie()
-        {
-            return życie;
-        }
-
-        public void SetŻycie(int value)
-        {
-            życie = value;
-            PropertyChanged(this, new PropertyChangedEventArgs("Życie"));
-        }
-
-        public int GetObrażenia()
-        {
-            return obrażenia;
-        }
-
-        public void SetObrażenia(int value)
-        {
-            obrażenia = value;
-            PropertyChanged(this, new PropertyChangedEventArgs("Obrażenia"));
-        }
-
-        public int GetObrona()
-        {
-            return obrona;
-        }
-
-        public void SetObrona(int value)
-        {
-            obrona = value;
-            PropertyChanged(this, new PropertyChangedEventArgs("Obrona"));
-        }
-
-        public int GetSzansaUnik()
-        {
-            return szansaUnik;
-        }
-
-        public void SetSzansaUnik(int value)
-        {
-            szansaUnik = value;
-            PropertyChanged(this, new PropertyChangedEventArgs("SzansaUnik"));
-        }
-
-        public int GetSzansaTrafienia()
-        {
-            return szansaTrafienia;
-        }
-
-        public void SetSzansaTrafienia(int value)
-        {
-            szansaTrafienia = value;
-            PropertyChanged(this, new PropertyChangedEventArgs("SzansaTrafienia"));
-        }
     }
 }

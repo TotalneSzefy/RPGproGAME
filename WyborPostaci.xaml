@@ -45,11 +45,11 @@
         </Image>
 
         <Button Content="Karzel" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"
-                   FontSize="70" Height="auto" Width="auto"/>
+                   FontSize="70" Height="auto" Width="auto" Click="Karzel_Clik" />
         <Button Content="Wojownik" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"
-                   FontSize="70" Height="auto" Width="auto"/>
+                   FontSize="70" Height="auto" Width="auto" Click="Wojownik_Clik"/>
         <Button Content="Zwiadowca" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"
-                   FontSize="70" Height="auto" Width="auto"/>
+                   FontSize="70" Height="auto" Width="auto" Click="Zwiadowca_Click"/>
 
         <StackPanel Grid.Row="1" Grid.Column="2" Background="#3F000000" BorderThickness="4" BorderBrush="Black" Margin="20,7,20,7">
             <RelativePanel>
