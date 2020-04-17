@@ -11,10 +11,11 @@ namespace RPG
     class Rozmiary: INotifyPropertyChanged
     {
         private int statyFontSize1;
-
+        private int przyciskiFontSize1;
         public Rozmiary()
         {
             StatyFontSize1 = 10;
+            PrzyciskiFontSize1 = 10;
         }
 
 
@@ -29,8 +30,18 @@ namespace RPG
             }
 
         }
+        public int PrzyciskiFontSize1
+        {
+            get => przyciskiFontSize1;
 
-        
+            set
+            {
+                przyciskiFontSize1 = value;
+                PropertyChanged(this, new PropertyChangedEventArgs("PrzyciskiFontSize1"));
+            }
+
+        }
+
 
         public event PropertyChangedEventHandler PropertyChanged = delegate { };
 

@@ -86,21 +86,33 @@ namespace RPG
 
         private void Page_SizeChanged(object sender, SizeChangedEventArgs e)
         {
-            if ((((Frame)Window.Current.Content).ActualWidth <= 600) || (((Frame)Window.Current.Content).ActualHeight <= 550))
+            if ((((Frame)Window.Current.Content).ActualWidth <= 501) || (((Frame)Window.Current.Content).ActualHeight <= 501))
             {
                 rozmiary.StatyFontSize1 = 7;
+                wroc_button.FontSize = 7;
+                rozmiary.PrzyciskiFontSize1 = 25;
+                NazwaPostaci_TB.FontSize = 9;
             }
             else if ((((Frame)Window.Current.Content).ActualWidth <= 800) || (((Frame)Window.Current.Content).ActualHeight <= 600))
             {
                 rozmiary.StatyFontSize1 = 20;
+                wroc_button.FontSize = 20;
+                rozmiary.PrzyciskiFontSize1 = 50;
+                NazwaPostaci_TB.FontSize = 20;
             }
             else if ((((Frame)Window.Current.Content).ActualWidth <= 1370) || (((Frame)Window.Current.Content).ActualHeight <= 770))
             {
                 rozmiary.StatyFontSize1 = 27;
+                wroc_button.FontSize = 27;
+                rozmiary.PrzyciskiFontSize1 = 75;
+                NazwaPostaci_TB.FontSize = 50;
             }
             else if ((((Frame)Window.Current.Content).ActualWidth < 1920) || (((Frame)Window.Current.Content).ActualHeight < 1080))
             {
                 rozmiary.StatyFontSize1 = 40;
+                wroc_button.FontSize = 40;
+                rozmiary.PrzyciskiFontSize1 = 100;
+                NazwaPostaci_TB.FontSize = 80;
             }
          
         }

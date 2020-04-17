@@ -24,14 +24,7 @@
 
         <NavigationView x:Name="PanelNawigacyjny" OpenPaneLength="250" PaneDisplayMode="Top"  CompactModeThresholdWidth="600" ExpandedModeThresholdWidth="1200" Grid.ColumnSpan="2">
             <NavigationView.MenuItems>
-                <NavigationViewItem Tag="domek">
-                    <StackPanel>
-                        <RelativePanel>
-                            <Image x:Name="obrazek1" Source="Assets\\karzel_ikona.jpg" Height="30" Width="30"/>
-                            <TextBlock x:Name="postac_menuItem" Text="Postac" RelativePanel.RightOf="obrazek1" FontSize="20" Margin="10,5,0,0" RightTapped="postac_menuItem_RightTapped" Tapped="postac_menuItem_Tapped"  />
-                        </RelativePanel>
-                    </StackPanel>
-                </NavigationViewItem>
+                
                 <NavigationViewItem x:Name="Karczma" Tapped="Karczma_Tapped">
                     <StackPanel>
                         <RelativePanel>
