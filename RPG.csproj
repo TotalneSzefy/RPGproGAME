@@ -140,6 +140,7 @@
     <Compile Include="Rozgrywka.xaml.cs">
       <DependentUpon>Rozgrywka.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Rozmiary.cs" />
     <Compile Include="WyborPostaci.xaml.cs">
       <DependentUpon>WyborPostaci.xaml</DependentUpon>
     </Compile>

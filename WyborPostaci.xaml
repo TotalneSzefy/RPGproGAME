@@ -6,80 +6,81 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" SizeChanged="Page_SizeChanged" >
 
+    
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition Height="auto"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        
+
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        
-        
+
+
         <Image Source="Assets//WyborPostaci_Tło.jpg" Stretch="Fill" Grid.RowSpan="5" Grid.ColumnSpan="3"/>
-        <TextBlock Grid.Row="0" FontSize="180" Text="Wybierz postac" Grid.ColumnSpan="3"
-                   HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,50,0,0" FontFamily="Assets\czcionka.ttf#Breathe Fire II" />
-        <Button Grid.Row="5" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="40,40,100,40"
-                Content="Powrot" x:Name="wroc_button" Click="wroc_button_Click" Grid.Column="2"/>
-        <Button Grid.Row="4" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="100,40,40,40"
+        <TextBlock x:Name="WybierzPostac_TB" FontSize="80" Text="Wybierz postac" Grid.ColumnSpan="3"
+                   HorizontalAlignment="Center"  FontFamily="Assets\czcionka.ttf#Breathe Fire II" />
+        <Button Grid.Row="5" VerticalAlignment="Bottom" HorizontalAlignment="Right" 
+                Content="Powrot" x:Name="wroc_button" Click="wroc_button_Click" Grid.Column="2" Height="auto" Width="auto" FontSize="40"/>
+        <Button Grid.Row="4" VerticalAlignment="Bottom" HorizontalAlignment="Left" Height="auto" Width="auto" FontSize="40"
                 Content="Wybierz" x:Name="wybierz_button" Tapped="wybierz_button_Tapped"/>
 
-        <Image x:Name="Karzel_Image" Grid.Row="1" HorizontalAlignment="Left" Height="130" Width="350"
-                Margin="80,20,20,20" Source="Assets//karzel_ikona.jpg" Stretch="Fill" Grid.Column="0">
+        <Image x:Name="Karzel_Image" Grid.Row="1" HorizontalAlignment="Left" Height="auto" Width="auto"
+                Source="Assets//karzel_ikona.jpg" Stretch="Fill" Grid.Column="0" Margin="10,10,10,10">
         </Image>
 
-        <Image  x:Name="Wojownik_Image" Grid.Row="2" HorizontalAlignment="Left" Height="130" Width="350"
-                Margin="80,20,20,20" Source="Assets//wojownik_ikona.jpg" Stretch="Fill" Grid.Column="2">
+        <Image  x:Name="Wojownik_Image" Grid.Row="2" HorizontalAlignment="Left" Height="auto" Width="auto"
+                Source="Assets//wojownik_ikona.jpg" Stretch="Fill" Grid.Column="2" Margin="10,10,10,10">
         </Image>
 
-        <Image x:Name="Zwiadowca_Image" Grid.Row="3" HorizontalAlignment="Left" Height="130" Width="350"
-                Margin="80,20,20,20" Source="Assets//zwiadowca_ikona.jpg" Stretch="Fill" Grid.Column="0">
+        <Image x:Name="Zwiadowca_Image" Grid.Row="3" HorizontalAlignment="Left" Height="auto" Width="auto"
+                 Source="Assets//zwiadowca_ikona.jpg" Stretch="Fill" Grid.Column="0" Margin="10,10,10,10">
         </Image>
 
-        <Button Content="Karzel" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"
-                   FontSize="70" Height="auto" Width="auto"/>
-        <Button Content="Wojownik" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"
-                   FontSize="70" Height="auto" Width="auto"/>
-        <Button Content="Zwiadowca" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"
-                   FontSize="70" Height="auto" Width="auto"/>
+        <Button Content="Karzel" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center"
+                   FontSize="60" Height="auto" Width="auto"/>
+        <Button Content="Wojownik" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center"
+                   FontSize="60" Height="auto" Width="auto"/>
+        <Button Content="Zwiadowca" Grid.Row="3" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center"
+                   FontSize="60" Height="auto" Width="auto"/>
 
-        <StackPanel Grid.Row="1" Grid.Column="2" Background="#3F000000" BorderThickness="4" BorderBrush="Black" Margin="20,7,20,7">
-            <RelativePanel>
-                <TextBlock x:Name="SilaKarzel" FontSize="35" Text="Siła:    12 " />
-                <TextBlock x:Name="InteligencjaKarzel" FontSize="35" Text="Inteligencja:    0 " RelativePanel.Below="SilaKarzel"/>
-                <TextBlock x:Name="ZrecznoscKarzel" FontSize="35" Text="zrecznosc:   3" RelativePanel.Below="InteligencjaKarzel"/>
-                <TextBlock x:Name="WytrzymaloscKarzel" FontSize="35" Text="wytrzymalosc:   5" RelativePanel.Below="ZrecznoscKarzel"/>
+        <StackPanel Grid.Row="1" Grid.Column="1" Background="#3F000000" BorderThickness="3" BorderBrush="Black" Width="auto" Height="auto" Margin="10,10,10,10" >
+            <RelativePanel  >
+                <TextBlock x:Name="SilaKarzel" FontSize="{x:Bind rozmiary.StatyFontSize1, Mode=OneWay}" Text="Siła:    12 " />
+                <TextBlock x:Name="InteligencjaKarzel" FontSize="{x:Bind rozmiary.StatyFontSize1, Mode=OneWay}" Text="Inteligencja:    0 " RelativePanel.Below="SilaKarzel"/>
+                <TextBlock x:Name="ZrecznoscKarzel" FontSize="{x:Bind rozmiary.StatyFontSize1, Mode=OneWay}" Text="zrecznosc:   3" RelativePanel.Below="InteligencjaKarzel"/>
+                <TextBlock x:Name="WytrzymaloscKarzel" FontSize="{x:Bind rozmiary.StatyFontSize1, Mode=OneWay}" Text="wytrzymalosc:   5" RelativePanel.Below="ZrecznoscKarzel"/>
             </RelativePanel>
         </StackPanel>
 
-        <StackPanel Grid.Row="2" Grid.Column="0" Background="#3F000000" BorderThickness="4" BorderBrush="Black" Margin="20,7,20,7">
+        <StackPanel Grid.Row="2" Grid.Column="1" Background="#3F000000" BorderThickness="3" BorderBrush="Black" Margin= "10,5,10,5">
             <RelativePanel>
-                <TextBlock x:Name="SilaWoj" FontSize="35" Text="Siła:    7" />
-                <TextBlock x:Name="InteligencjaWoj" FontSize="35" Text="Inteligencja:      4 " RelativePanel.Below="SilaWoj"/>
-                <TextBlock x:Name="ZrecznoscWoj" FontSize="35" Text="zrecznosc:     4 " RelativePanel.Below="InteligencjaWoj"/>
-                <TextBlock x:Name="WytrzymaloscWojownik" FontSize="35" Text="wytrzymalosc:   5" RelativePanel.Below="ZrecznoscWoj"/>
+                <TextBlock x:Name="SilaWoj" FontSize="{x:Bind rozmiary.StatyFontSize1, Mode=OneWay}" Text="Siła:    7" />
+                <TextBlock x:Name="InteligencjaWoj" FontSize="{x:Bind rozmiary.StatyFontSize1, Mode=OneWay}" Text="Inteligencja:      4 " RelativePanel.Below="SilaWoj"/>
+                <TextBlock x:Name="ZrecznoscWoj" FontSize="{x:Bind rozmiary.StatyFontSize1, Mode=OneWay}" Text="zrecznosc:     4 " RelativePanel.Below="InteligencjaWoj"/>
+                <TextBlock x:Name="WytrzymaloscWojownik" FontSize="{x:Bind rozmiary.StatyFontSize1, Mode=OneWay}" Text="wytrzymalosc:   5" RelativePanel.Below="ZrecznoscWoj"/>
             </RelativePanel>
         </StackPanel>
 
-        <StackPanel Grid.Row="3" Grid.Column="2" Background="#3F000000" BorderThickness="4" BorderBrush="Black" Margin="20,7,20,7">
+        <StackPanel Grid.Row="3" Grid.Column="1" Background="#3F000000" BorderThickness="3" BorderBrush="Black" Margin="10,10,10,10">
             <RelativePanel>
-                <TextBlock x:Name="SilaZwiad" FontSize="35" Text="Siła:     5" />
-                <TextBlock x:Name="InteligencjaZwiad" FontSize="35" Text="Inteligencja:     5 " RelativePanel.Below="SilaZwiad"/>
-                <TextBlock x:Name="ZrecznoscZwiad" FontSize="35" Text="zrecznosc:     5 " RelativePanel.Below="InteligencjaZwiad"/>
-                <TextBlock x:Name="WytrzymaloscZwiad" FontSize="35" Text="wytrzymalosc:   5" RelativePanel.Below="ZrecznoscZwiad"/>
+                <TextBlock x:Name="SilaZwiad" FontSize="{x:Bind rozmiary.StatyFontSize1, Mode=OneWay}" Text="Siła:     5" />
+                <TextBlock x:Name="InteligencjaZwiad" FontSize="{x:Bind rozmiary.StatyFontSize1, Mode=OneWay}" Text="Inteligencja:     5 " RelativePanel.Below="SilaZwiad"/>
+                <TextBlock x:Name="ZrecznoscZwiad" FontSize="{x:Bind rozmiary.StatyFontSize1, Mode=OneWay}" Text="zrecznosc:     5 " RelativePanel.Below="InteligencjaZwiad"/>
+                <TextBlock x:Name="WytrzymaloscZwiad" FontSize="{x:Bind rozmiary.StatyFontSize1, Mode=OneWay}" Text="wytrzymalosc:   5" RelativePanel.Below="ZrecznoscZwiad"/>
             </RelativePanel>
         </StackPanel>
         <TextBlock Grid.Row="4" Grid.Column="1" Margin="20,20,20,20" VerticalAlignment="Top" FontSize="48" Text="Nazwa postaci:"/>
-        <TextBox x:Name="NazwaPostaci_TB" Grid.Row="4" Grid.Column="1" Margin="20,20,20,20" VerticalAlignment="Bottom" Height="80"
-                 FontSize="60" HorizontalAlignment="Center" Width="400"
+        <TextBox x:Name="NazwaPostaci_TB" Grid.Row="4" Grid.Column="1" Margin="20,20,20,20" VerticalAlignment="Bottom" Height="auto"
+                 FontSize="60" HorizontalAlignment="Center" Width="auto" 
                  FontFamily="Assets\czcionka.ttf#Breathe Fire II"/>
 
     </Grid>

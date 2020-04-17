@@ -27,6 +27,10 @@ namespace RPG
             this.InitializeComponent();
         }
 
+        Rozmiary rozmiary = new Rozmiary();
+
+
+
         private void wroc_button_Click(object sender, RoutedEventArgs e)
         {
             if (Frame.CanGoBack)
@@ -39,6 +43,29 @@ namespace RPG
         private void wybierz_button_Tapped(object sender, TappedRoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(Rozgrywka));
+        }
+       
+      
+
+        private void Page_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            if ((((Frame)Window.Current.Content).ActualWidth <= 600) || (((Frame)Window.Current.Content).ActualHeight <= 550))
+            {
+                rozmiary.StatyFontSize1 = 7;
+            }
+            else if ((((Frame)Window.Current.Content).ActualWidth <= 800) || (((Frame)Window.Current.Content).ActualHeight <= 600))
+            {
+                rozmiary.StatyFontSize1 = 20;
+            }
+            else if ((((Frame)Window.Current.Content).ActualWidth <= 1370) || (((Frame)Window.Current.Content).ActualHeight <= 770))
+            {
+                rozmiary.StatyFontSize1 = 27;
+            }
+            else if ((((Frame)Window.Current.Content).ActualWidth < 1920) || (((Frame)Window.Current.Content).ActualHeight < 1080))
+            {
+                rozmiary.StatyFontSize1 = 40;
+            }
+         
         }
     }
 }

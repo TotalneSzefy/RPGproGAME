@@ -24,15 +24,18 @@ namespace RPG
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        
+       
         Frame appWindowFrame = new Frame();
-        
 
+        //((Frame) Window.Current.Content).ActualWidth <= 1200
         public MainPage()
         {
             this.InitializeComponent();
+           
+
         }
 
+        
        
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -43,6 +46,39 @@ namespace RPG
         private void Zakoncz_BTN_Click(object sender, RoutedEventArgs e)
         {
             App.Current.Exit();
+        }
+
+        private void Page_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            if ((((Frame)Window.Current.Content).ActualWidth <= 800) || (((Frame)Window.Current.Content).ActualHeight <= 600))
+            {
+                NazwaGry.FontSize = 50;
+                NowaGra_Btn.FontSize = 30;
+                Wznow_Btn.FontSize = 30;
+                Zakoncz_Btn.FontSize = 30;
+            }
+            else if((((Frame)Window.Current.Content).ActualWidth <= 1370) || (((Frame)Window.Current.Content).ActualHeight <= 770))
+            {
+                NazwaGry.FontSize = 90;
+                NowaGra_Btn.FontSize = 60;
+                Wznow_Btn.FontSize = 60;
+                Zakoncz_Btn.FontSize = 60;
+            }
+            else if((((Frame)Window.Current.Content).ActualWidth <= 1920 ) || (((Frame)Window.Current.Content).ActualHeight <= 1080))
+            {
+                NazwaGry.FontSize = 310;
+                NowaGra_Btn.FontSize = 100;
+                Wznow_Btn.FontSize = 100;
+                Zakoncz_Btn.FontSize = 100;
+            }
+            else
+            {
+                NazwaGry.FontSize = 50;
+                NowaGra_Btn.FontSize = 30;
+                Wznow_Btn.FontSize = 30;
+                Zakoncz_Btn.FontSize = 30;
+            }
+
         }
     }
 }

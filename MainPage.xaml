@@ -6,31 +6,32 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-   
-    <Grid>
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"  SizeChanged="Page_SizeChanged"  >
+
+    <Grid >
         <Grid.ColumnDefinitions>
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
-        
-        <Image Source="Assets//PanelStartowy_Tło.jpg" Stretch="Fill" Grid.RowSpan="4" />
-       
-        <TextBlock Grid.Row="0" FontSize="180" Text="Muj   RPG" 
-                   HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,50,0,0" FontFamily="Assets\czcionka.ttf#Breathe Fire II" />
 
-        <Button Grid.Row="1" Content="Nowa gra" Click="Button_Click"/>
-        <Button Grid.Row="2" Content="Wznów"/>
-        <Button Grid.Row="3" Content="Zakoncz gre" x:Name="Zakoncz_BTN" Click="Zakoncz_BTN_Click"/>
+        <Image x:Name="tlo" Source="Assets//PanelStartowy_Tło.jpg" Stretch="Fill" Grid.RowSpan="5" />
+
+        <TextBlock x:Name="NazwaGry" Grid.Row="0"  Text="Muj   RPG" FontSize="80"
+                   HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,0,0,0" FontFamily="Assets\czcionka.ttf#Breathe Fire II" />
+
+        <Button x:Name="NowaGra_Btn" Grid.Row="1" Content="Nowa gra" Click="Button_Click" />
+        <Button x:Name="Wznow_Btn" Grid.Row="2" Content="Wznów"/>
+        <Button x:Name="Zakoncz_Btn" Grid.Row="3" Content="Zakoncz gre" Click="Zakoncz_BTN_Click"/>
         <TextBlock Text="By SBX and JohnyTea" Grid.Row="4" HorizontalAlignment="Right" FontSize="45" VerticalAlignment="Bottom"
-                   FontFamily="Assets\czcionka.ttf#Breathe Fire II"/>
+                   FontFamily="Assets\czcionka.ttf#Breathe Fire II" />
 
 
     </Grid>
-    
+
 </Page>
