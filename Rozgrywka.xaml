@@ -6,23 +6,30 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" SizeChanged="Page_SizeChanged">
 
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="0.7*"/>
+            <ColumnDefinition Width="0.9*"/>
+            <ColumnDefinition Width="2.5*"/>
+            <ColumnDefinition Width="0.9*"/>
+            <ColumnDefinition Width="4.5*"/>
+            <ColumnDefinition Width="0.7*"/>
+            
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="1.5*"/>
             <RowDefinition Height="2*"/>
             <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="4*"/>
         </Grid.RowDefinitions>
-        <Image Source="Assets//rozgrywka_Tło.jpg" Stretch="Fill" Grid.ColumnSpan="2" Grid.RowSpan="3" />
+        <Image Source="Assets//rozgrywka_Tło.jpg" Stretch="Fill" Grid.ColumnSpan="10" Grid.RowSpan="6" />
 
-        <TextBlock Text="{x:Bind bohater.Imie}" FontSize="90" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock Text="{x:Bind bohater.Imie}" FontSize="90" Grid.ColumnSpan="5" VerticalAlignment="Center" HorizontalAlignment="Center"/>
 
-        <NavigationView x:Name="PanelNawigacyjny" OpenPaneLength="250" PaneDisplayMode="Top"  CompactModeThresholdWidth="600" ExpandedModeThresholdWidth="1200" Grid.ColumnSpan="2">
+        <NavigationView x:Name="PanelNawigacyjny" OpenPaneLength="250" PaneDisplayMode="Top"  CompactModeThresholdWidth="600" ExpandedModeThresholdWidth="1200" Grid.ColumnSpan="6" Height="130" VerticalAlignment="Bottom">
             <NavigationView.MenuItems>
                 
                 <NavigationViewItem x:Name="Karczma" Tapped="Karczma_Tapped">
@@ -62,18 +69,46 @@
         </NavigationView>
 
         <!--ekwipunek założony-->
-        <RelativePanel  BorderThickness="10" BorderBrush="Black"  HorizontalAlignment="Center" Grid.Row="1" Grid.Column="0" Background="#720C0B14">
-            <Image x:Name="helm" Source="{x:Bind bohater.Helm.SciezkaIkony, Mode=OneWay}" Width="120" Height="120" />
+        <StackPanel Grid.Column="1" Grid.Row="1" Background="#59000000" BorderBrush="Black" BorderThickness="2" Margin="10,10,10,10">
+            <Image x:Name="helm" Source="{x:Bind bohater.Helm.SciezkaIkony, Mode=OneWay}" Stretch="Fill" />
+        </StackPanel>
+        <StackPanel Grid.Column="1" Grid.Row="2" Background="#59000000" BorderBrush="Black" BorderThickness="2" Margin="10,10,10,10">
+            <Image x:Name="zbroja" Source="{x:Bind bohater.Zbroja.SciezkaIkony, Mode=OneWay}" Stretch="Fill" />
+        </StackPanel>
+        <StackPanel Grid.Column="1" Grid.Row="3" Background="#59000000" BorderBrush="Black" BorderThickness="2" Margin="10,10,10,10">
+            <Image x:Name="kalesony" Source="{x:Bind bohater.Spodnie.SciezkaIkony, Mode=OneWay}" Stretch="Fill" />
+        </StackPanel>
+        <StackPanel Grid.Column="3" Grid.Row="1" Background="#59000000" BorderBrush="Black" BorderThickness="2" Margin="10,10,10,10">
+            <Image x:Name="miecz"  Source="{x:Bind bohater.Bron.SciezkaIkony, Mode=OneWay}" Stretch="Fill"/>
+        </StackPanel>
+        <StackPanel Grid.Column="3" Grid.Row="2" Background="#59000000" BorderBrush="Black" BorderThickness="2" Margin="10,10,10,10">
+            <Image x:Name="tarcza" Source="{x:Bind bohater.Tarcza.SciezkaIkony, Mode=OneWay}" Stretch="Fill"/>
+        </StackPanel>
+        <StackPanel Grid.Column="3" Grid.Row="3" Background="#59000000" BorderBrush="Black" BorderThickness="2" Margin="10,10,10,10">
+            <Image x:Name="buty" Source="{x:Bind bohater.Buty.SciezkaIkony, Mode=OneWay}" Stretch="Fill"/>
+        </StackPanel>
+        
+        <StackPanel Grid.Column="2" Grid.Row="1" Grid.RowSpan="3" Background="#59000000" BorderBrush="Black" BorderThickness="2" Margin="10,10,10,10">
+            <Image x:Name="ObrazPostaci" RelativePanel.RightOf="helm"  Source="{x:Bind bohater.SciezkaIkony}"  />
+
+        </StackPanel>
+
+
+
+
+
+        <!--<RelativePanel  BorderThickness="10" BorderBrush="Black"  HorizontalAlignment="Center" Grid.Row="1" Grid.Column="0" Background="#720C0B14">
+            <Image x:Name="helm" Source="{x:Bind bohater.Helm.SciezkaIkony, Mode=OneWay}" Width="auto" Height="auto" />
             <Image x:Name="zbroja" Source="{x:Bind bohater.Zbroja.SciezkaIkony, Mode=OneWay}" Width="120" Height="120" RelativePanel.Below="helm" Margin="0,20,0,0" />
             <Image x:Name="kalesony" Source="{x:Bind bohater.Spodnie.SciezkaIkony, Mode=OneWay}" Width="120" Height="120" RelativePanel.Below="zbroja" Margin="0,20,0,0"/>
-            <Image x:Name="ObrazPostaci" RelativePanel.RightOf="helm"  Source="{x:Bind bohater.SciezkaIkony}" HorizontalAlignment="Center" VerticalAlignment="Center" Width="auto"/>
+            <Image x:Name="ObrazPostaci" RelativePanel.RightOf="helm"  Source="{x:Bind bohater.SciezkaIkony}"  />
 
-            <Image x:Name="miecz" RelativePanel.RightOf="ObrazPostaci" Source="{x:Bind bohater.Bron.SciezkaIkony, Mode=OneWay}" Width="120" Height="120" />
-            <Image x:Name="tarcza" Source="{x:Bind bohater.Tarcza.SciezkaIkony, Mode=OneWay}" Width="120" Height="120" RelativePanel.Below="miecz" RelativePanel.RightOf="ObrazPostaci" Margin="0,20,0,0"/>
-            <Image x:Name="buty" Source="{x:Bind bohater.Buty.SciezkaIkony, Mode=OneWay}" Width="120" Height="120" RelativePanel.Below="tarcza" RelativePanel.RightOf="ObrazPostaci" Margin="0,20,0,0"/>
-        </RelativePanel>
+            <Image x:Name="miecz" RelativePanel.RightOf="ObrazPostaci" Source="{x:Bind bohater.Bron.SciezkaIkony, Mode=OneWay}"  />
+            <Image x:Name="tarcza" Source="{x:Bind bohater.Tarcza.SciezkaIkony, Mode=OneWay}"  RelativePanel.Below="miecz" RelativePanel.RightOf="ObrazPostaci" Margin="0,20,0,0"/>
+            <Image x:Name="buty" Source="{x:Bind bohater.Buty.SciezkaIkony, Mode=OneWay}" RelativePanel.Below="tarcza" RelativePanel.RightOf="ObrazPostaci" Margin="0,20,0,0"/>
+        </RelativePanel>-->
 
-        <StackPanel BorderBrush="#FF708090" BorderThickness="4" Grid.ColumnSpan="2" Grid.Row="3" Background="#3F001E1E" Width="auto" Height="auto" Margin="100,10,100,10">
+        <StackPanel BorderBrush="#FF708090" BorderThickness="4" Grid.ColumnSpan="10" Grid.Row="5" Background="#3F001E1E" Width="auto" Height="auto" Margin="30,10,30,10">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="5*"/>
@@ -83,69 +118,71 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-                <TextBlock x:Name="Statystyki" Text="Statystyki:" FontSize="60" Margin="10,10,10,10" Grid.Row="0" Grid.Column="0">
+                <TextBlock x:Name="Statystyki" Text="Statystyki:" FontSize="{x:Bind rozmiary.PrzyciskiFontSize1, Mode=OneWay}" Margin="10,10,10,10" Grid.Row="0" Grid.Column="0">
                     <TextBlock.Foreground>
                         <AcrylicBrush TintColor="#CCFFFFFF"/>
                     </TextBlock.Foreground>
                 </TextBlock>
-                <TextBlock x:Name="Bonusy" Text="Bonusy:" FontSize="60" Margin="10,10,10,10" Grid.Row="0" Grid.Column="3">
+                <TextBlock x:Name="Bonusy" Text="Bonusy:" FontSize="{x:Bind rozmiary.PrzyciskiFontSize1, Mode=OneWay}" Margin="10,10,10,10" Grid.Row="0" Grid.Column="3">
                     <TextBlock.Foreground>
                         <AcrylicBrush TintColor="#CCFFFFFF"/>
                     </TextBlock.Foreground>
                 </TextBlock>
-                <TextBlock x:Name="Sila" Text="Siła:" FontSize="40" Margin="10,10,10,10" Grid.Row="1" Grid.Column="0" Foreground="#FFE0D1D1" />
-                <TextBlock x:Name="Int" Text="Inteligencja:" FontSize="40" Margin="10,10,10,10" RelativePanel.Below="Sila" Grid.Row="2" Grid.Column="0" Foreground="#FFE0D1D1"/>
-                <TextBlock x:Name="Zreka" Text="Zrecznosc:" FontSize="40" Margin="10,10,10,10" RelativePanel.Below="Int" Grid.Row="3" Grid.Column="0" Foreground="#FFE0D1D1"/>
-                <TextBlock x:Name="Wytrzymalosc" Text="Wytrzymalosc:" FontSize="40" Margin="10,10,10,10" RelativePanel.Below="Int" Grid.Row="4" Grid.Column="0" Foreground="#FFE0D1D1"/>
+                <TextBlock x:Name="Sila" Text="Siła:" FontSize="{x:Bind rozmiary.StatyFontSize1, Mode=OneWay}" Margin="3,3,3,3" Grid.Row="1" Grid.Column="0" Foreground="#FFE0D1D1" />
+                <TextBlock x:Name="Int" Text="Inteligencja:" FontSize="{x:Bind rozmiary.StatyFontSize1, Mode=OneWay}" Margin="3,3,3,3" RelativePanel.Below="Sila" Grid.Row="2" Grid.Column="0" Foreground="#FFE0D1D1"/>
+                <TextBlock x:Name="Zreka" Text="Zrecznosc:" FontSize="{x:Bind rozmiary.StatyFontSize1, Mode=OneWay}" Margin="3,3,3,3" RelativePanel.Below="Int" Grid.Row="3" Grid.Column="0" Foreground="#FFE0D1D1"/>
+                <TextBlock x:Name="Wytrzymalosc" Text="Wytrzymalosc:" FontSize="{x:Bind rozmiary.StatyFontSize1, Mode=OneWay}" Margin="3,3,3,3" RelativePanel.Below="Int" Grid.Row="4" Grid.Column="0" Foreground="#FFE0D1D1"/>
 
 
-                <TextBlock x:Name="SilaWartosc" Text="{x:Bind bohater.Sila, Mode=OneWay}" FontSize="40" Margin="10,10,10,10" Grid.Row="1" Grid.Column="1" Foreground="#FFB8A94F"/>
-                <TextBlock x:Name="IntWartosc" Text="{x:Bind bohater.Inteligencja, Mode=OneWay}" FontSize="40" Margin="10,10,10,10" RelativePanel.Below="Sila" Grid.Row="2" Grid.Column="1" Foreground="#FFB8A94F"/>
-                <TextBlock x:Name="ZrekaWartosc" Text="{x:Bind bohater.Zrecznosc, Mode=OneWay}" FontSize="40" Margin="10,10,10,10" RelativePanel.Below="Int" Grid.Row="3" Grid.Column="1" Foreground="#FFB8A94F"/>
-                <TextBlock x:Name="WytrzymaloscWartosc" Text="{x:Bind bohater.Wytrzymalosc, Mode=OneWay}" FontSize="40" Margin="10,10,10,10" RelativePanel.Below="Int" Grid.Row="4" Grid.Column="1" Foreground="#FFB8A94F"/>
+                <TextBlock x:Name="SilaWartosc" Text="{x:Bind bohater.Sila, Mode=OneWay}" FontSize="{x:Bind rozmiary.StatyFontSize1, Mode=OneWay}"  Grid.Row="1" Grid.Column="1" Foreground="#FFB8A94F"/>
+                <TextBlock x:Name="IntWartosc" Text="{x:Bind bohater.Inteligencja, Mode=OneWay}" FontSize="{x:Bind rozmiary.StatyFontSize1, Mode=OneWay}"  RelativePanel.Below="Sila" Grid.Row="2" Grid.Column="1" Foreground="#FFB8A94F"/>
+                <TextBlock x:Name="ZrekaWartosc" Text="{x:Bind bohater.Zrecznosc, Mode=OneWay}" FontSize="{x:Bind rozmiary.StatyFontSize1, Mode=OneWay}"  RelativePanel.Below="Int" Grid.Row="3" Grid.Column="1" Foreground="#FFB8A94F"/>
+                <TextBlock x:Name="WytrzymaloscWartosc" Text="{x:Bind bohater.Wytrzymalosc, Mode=OneWay}" FontSize="{x:Bind rozmiary.StatyFontSize1, Mode=OneWay}" RelativePanel.Below="Int" Grid.Row="4" Grid.Column="1" Foreground="#FFB8A94F"/>
 
 
-                <Button x:Name="DodajSila" Height="50" Width="50" FontSize="40" Grid.Row="1" Grid.Column="2" Click="zwiekszSila_Click">
+                <Button x:Name="DodajSila" Height="{x:Bind rozmiary.StatyFontSize1, Mode=OneWay}" Width="{x:Bind rozmiary.StatyFontSize1, Mode=OneWay}" Grid.Row="1" Grid.Column="2" Click="zwiekszSila_Click">
                     <Button.Background>
                         <ImageBrush ImageSource="Assets/plus.png" Stretch="Uniform" />
                     </Button.Background>
                 </Button>
-                <Button x:Name="DodajInt" Height="50" Width="50"  FontSize="40" Margin="10,10,10,10" RelativePanel.Below="Sila" Grid.Row="2" Grid.Column="2" Click="zwiekszInt_Click">
+                <Button x:Name="DodajInt" Height="{x:Bind rozmiary.StatyFontSize1, Mode=OneWay}" Width="{x:Bind rozmiary.StatyFontSize1, Mode=OneWay}"  Margin="10,10,10,10" RelativePanel.Below="Sila" Grid.Row="2" Grid.Column="2" Click="zwiekszInt_Click">
                     <Button.Background>
                         <ImageBrush ImageSource="Assets/plus.png" Stretch="Uniform" />
                     </Button.Background>
                 </Button>
-                <Button Height="50" Width="50" x:Name="DodajZreka" FontSize="40" Margin="10,10,10,10" RelativePanel.Below="Int" Grid.Row="3" Grid.Column="2" Click="dodajZrecznosc_Click">
+                <Button Height="{x:Bind rozmiary.StatyFontSize1, Mode=OneWay}" Width="{x:Bind rozmiary.StatyFontSize1, Mode=OneWay}" x:Name="DodajZreka" Margin="10,10,10,10" RelativePanel.Below="Int" Grid.Row="3" Grid.Column="2" Click="dodajZrecznosc_Click">
                     <Button.Background>
                         <ImageBrush ImageSource="Assets/plus.png" Stretch="Uniform" />
                     </Button.Background>
                 </Button>
-                <Button Height="50" Width="50" x:Name="DodajWytrzymalosc" FontSize="40" Margin="10,10,10,10" RelativePanel.Below="Int" Grid.Row="4" Grid.Column="2" Click="dodajWytrzymalosc_Click">
+                <Button Height="{x:Bind rozmiary.StatyFontSize1, Mode=OneWay}" Width="{x:Bind rozmiary.StatyFontSize1, Mode=OneWay}" x:Name="DodajWytrzymalosc" Margin="10,10,10,10" RelativePanel.Below="Int" Grid.Row="4" Grid.Column="2" Click="dodajWytrzymalosc_Click">
                     <Button.Background>
                         <ImageBrush ImageSource="Assets/plus.png" Stretch="Uniform" />
                     </Button.Background>
                 </Button>
 
 
-                <TextBlock x:Name="Obrazenia" Text="Obrazenia:" FontSize="40" Margin="10,10,10,10" Grid.Row="1" Grid.Column="3" Foreground="#FFFFF85B" />
-                <TextBlock x:Name="Obrona" Text="Obrona:" FontSize="40" Margin="10,10,10,10" RelativePanel.Below="Sila" Grid.Row="2" Grid.Column="3" Foreground="#FFFFF85B"/>
-                <TextBlock x:Name="SzansaTrafienia" Text="Szansa trafienia:" FontSize="40" Margin="10,10,10,10" RelativePanel.Below="Int" Grid.Row="3" Grid.Column="3" Foreground="#FFFFF85B"/>
-                <TextBlock x:Name="SzansaNaUnik" Text="Szansa na unik:" FontSize="40" Margin="10,10,10,10" RelativePanel.Below="Int" Grid.Row="4" Grid.Column="3" Foreground="#FFFFF85B"/>
+                <TextBlock x:Name="Obrazenia" Text="Obrazenia:" FontSize="{x:Bind rozmiary.StatyFontSize1, Mode=OneWay}" Grid.Row="1" Grid.Column="3" Foreground="#FFFFF85B" />
+                <TextBlock x:Name="Obrona" Text="Obrona:" FontSize="{x:Bind rozmiary.StatyFontSize1, Mode=OneWay}"  RelativePanel.Below="Sila" Grid.Row="2" Grid.Column="3" Foreground="#FFFFF85B"/>
+                <TextBlock x:Name="SzansaTrafienia" Text="Szansa trafienia:" FontSize="{x:Bind rozmiary.StatyFontSize1, Mode=OneWay}"  RelativePanel.Below="Int" Grid.Row="3" Grid.Column="3" Foreground="#FFFFF85B"/>
+                <TextBlock x:Name="SzansaNaUnik" Text="Szansa na unik:" FontSize="{x:Bind rozmiary.StatyFontSize1, Mode=OneWay}"  RelativePanel.Below="Int" Grid.Row="4" Grid.Column="3" Foreground="#FFFFF85B"/>
 
-                <TextBlock x:Name="AtakWartosc" Text="{x:Bind bohater.Obrazenia}" FontSize="40" Margin="10,10,10,10" Grid.Row="1" Grid.Column="4" Foreground="#FFFFDB00"/>
-                <TextBlock x:Name="ObronaWartosc" Text="{x:Bind bohater.Obrona}" FontSize="40" Margin="10,10,10,10" RelativePanel.Below="Sila" Grid.Row="2" Grid.Column="4" Foreground="#FFFFDB00"/>
-                <TextBlock x:Name="SzansaTrafieniaWartosc" Text="{x:Bind bohater.SzansaTrafienia}" FontSize="40" Margin="10,10,10,10" RelativePanel.Below="Int" Grid.Row="3" Grid.Column="4" Foreground="#FFFFDB00"/>
-                <TextBlock x:Name="SzansaNaUnikWartosc" Text="{x:Bind bohater.SzansaUnik}" FontSize="40" Margin="10,10,10,10" RelativePanel.Below="Int" Grid.Row="4" Grid.Column="4" Foreground="#FFFFDB00"/>
+                <TextBlock x:Name="AtakWartosc" Text="{x:Bind bohater.Obrazenia}" FontSize="{x:Bind rozmiary.StatyFontSize1, Mode=OneWay}"  Grid.Row="1" Grid.Column="4" Foreground="#FFFFDB00"/>
+                <TextBlock x:Name="ObronaWartosc" Text="{x:Bind bohater.Obrona}" FontSize="{x:Bind rozmiary.StatyFontSize1, Mode=OneWay}"  RelativePanel.Below="Sila" Grid.Row="2" Grid.Column="4" Foreground="#FFFFDB00"/>
+                <TextBlock x:Name="SzansaTrafieniaWartosc" Text="{x:Bind bohater.SzansaTrafienia}" FontSize="{x:Bind rozmiary.StatyFontSize1, Mode=OneWay}"  RelativePanel.Below="Int" Grid.Row="3" Grid.Column="4" Foreground="#FFFFDB00"/>
+                <TextBlock x:Name="SzansaNaUnikWartosc" Text="{x:Bind bohater.SzansaUnik}" FontSize="{x:Bind rozmiary.StatyFontSize1, Mode=OneWay}"  RelativePanel.Below="Int" Grid.Row="4" Grid.Column="4" Foreground="#FFFFDB00"/>
 
             </Grid>
         </StackPanel>
-        <ListBox Margin="50,20,100,10" Grid.Column="1" Grid.Row="1" ItemsSource="{x:Bind bohater.Ekwipunek}"   Name="Ekwipunek_ListBox" Background="#59000000" DoubleTapped="Ekwipunek_DoubleTapped">
+        
+        
+        <ListBox Margin="20,10,20,10" Grid.Column="4" Grid.Row="1" Grid.RowSpan="3" ItemsSource="{x:Bind bohater.Ekwipunek}"   Name="Ekwipunek_ListBox" Background="#59000000" DoubleTapped="Ekwipunek_DoubleTapped">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Height="50">

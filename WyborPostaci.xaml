@@ -37,7 +37,7 @@
         </Image>
 
         <Image  x:Name="Wojownik_Image" Grid.Row="2" HorizontalAlignment="Left" Height="auto" Width="auto"
-                Source="Assets//wojownik_ikona.jpg" Stretch="Fill" Grid.Column="2" Margin="10,10,10,10">
+                Source="ms-appx:///Assets///Postacie/wojownik_ikona3.png" Stretch="Fill" Grid.Column="2" Margin="10,10,10,10">
         </Image>
 
         <Image x:Name="Zwiadowca_Image" Grid.Row="3" HorizontalAlignment="Left" Height="auto" Width="auto"

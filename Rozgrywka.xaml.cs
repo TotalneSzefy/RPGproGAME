@@ -1,4 +1,5 @@
 ﻿using RPG.Dane;
+using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Navigation;
@@ -77,6 +78,34 @@ namespace RPG
             {
                 nowyHelm.Zalozony = false;
                 bohater.Helm = null;
+            }
+        }
+        Rozmiary rozmiary = new Rozmiary();
+        private void Page_SizeChanged(object sender, Windows.UI.Xaml.SizeChangedEventArgs e)
+        {
+            if ((((Frame)Window.Current.Content).ActualWidth <= 501) || (((Frame)Window.Current.Content).ActualHeight <= 481))
+            {
+                rozmiary.StatyFontSize1 = 7;
+                rozmiary.PrzyciskiFontSize1 = 12;
+
+            }
+            else if ((((Frame)Window.Current.Content).ActualWidth <= 800) || (((Frame)Window.Current.Content).ActualHeight <= 680))
+            {
+                rozmiary.StatyFontSize1 = 17;
+                rozmiary.PrzyciskiFontSize1 = 22;
+
+            }
+            else if ((((Frame)Window.Current.Content).ActualWidth <= 1370) || (((Frame)Window.Current.Content).ActualHeight <= 880))
+            {
+                rozmiary.StatyFontSize1 = 25;
+                rozmiary.PrzyciskiFontSize1 = 30;
+
+            }
+            else if ((((Frame)Window.Current.Content).ActualWidth < 1920) || (((Frame)Window.Current.Content).ActualHeight < 1080))
+            {
+                rozmiary.StatyFontSize1 = 37;
+                rozmiary.PrzyciskiFontSize1 = 42;
+
             }
         }
     }

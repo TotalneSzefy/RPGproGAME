@@ -8,7 +8,7 @@ namespace RPG.Dane
 {
     class Zbroja : Przedmiot
     {
-        Zbroja(string nazwa, int ilosc, int cena, int wymaganyLVL, string sciezkaIkony) : base(nazwa, ilosc, cena, wymaganyLVL, sciezkaIkony)
+        public Zbroja(string nazwa, int ilosc, int cena, int wymaganyLVL, string sciezkaIkony) : base(nazwa, ilosc, cena, wymaganyLVL, sciezkaIkony)
         {
 
         }

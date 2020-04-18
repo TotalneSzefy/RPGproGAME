@@ -165,6 +165,8 @@
     <Content Include="Assets\NPCimages\zbroja.png" />
     <Content Include="Assets\PanelStartowy_Tło.jpg" />
     <Content Include="Assets\plus.png" />
+    <Content Include="Assets\Postacie\Karzel1.png" />
+    <Content Include="Assets\Postacie\wojownik_ikona3.png" />
     <Content Include="Assets\rozgrywka_tło.jpg" />
     <Content Include="Assets\wojownik.jpg" />
     <Content Include="Assets\wojownik_ikona.jpg" />

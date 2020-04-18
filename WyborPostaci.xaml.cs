@@ -28,7 +28,7 @@ namespace RPG
             this.InitializeComponent();
         }
 
-        Rozmiary rozmiary = new Rozmiary();
+        
 
 
 
@@ -51,7 +51,7 @@ namespace RPG
             if (!String.IsNullOrEmpty(NazwaPostaci_TB.Text))
             {
                 string imie = NazwaPostaci_TB.Text;
-                Bohater klasa = new Bohater(imie, "ms-appx:///Assets//Karzel.jpg", 1, 100, 12, 0, 3, 5);
+                Bohater klasa = new Bohater(imie, "ms-appx:///Assets///Postacie/Karzel1.png", 1, 100, 12, 0, 3, 5);
                 otworzScanaRozgrywka(klasa);
             }
             
@@ -81,8 +81,8 @@ namespace RPG
         {
             this.Frame.Navigate(typeof(Rozgrywka),klasa);
         }
-       
-      
+
+        Rozmiary rozmiary = new Rozmiary();
 
         private void Page_SizeChanged(object sender, SizeChangedEventArgs e)
         {

@@ -135,8 +135,14 @@ namespace RPG.Dane
             this.Zrecznosc = zrecznosc;
             this.Wytrzymalosc = wytrzymalosc;
             //string nazwa,int ilosc, int cena, int wymaganyLVL, string sciezkaIkony
+           
             Ekwipunek.Add(new Hełm("Bylejaka Czapka", 1, 0, 0, "ms-appx:///Assets//NPCimages//helm.png"));
-            //Helm = new Hełm("Bylejaka Czapka", 1, 0, 0, "ms-appx:///Assets//NPCimages//helm.png");
+            Zbroja = new Zbroja("Bylejaka Czapka", 1, 0, 0, "ms-appx:///Assets//NPCimages//helm.png");
+            Tarcza = new Tarcza("Bylejaka Czapka", 1, 0, 0, "ms-appx:///Assets//NPCimages//helm.png");
+            Buty = new Buty("Bylejaka Czapka", 1, 0, 0, "ms-appx:///Assets//NPCimages//helm.png");
+            Spodnie = new Spodnie("Bylejaka Czapka", 1, 0, 0, "ms-appx:///Assets//NPCimages//helm.png");
+            Bron = new Broń("Bylejaka Czapka", 1, 0, 0, "ms-appx:///Assets//NPCimages//helm.png");
+
         }
 
         #endregion
