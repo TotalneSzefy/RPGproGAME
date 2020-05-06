@@ -137,14 +137,103 @@ namespace RPG.Dane
             //string nazwa,int ilosc, int cena, int wymaganyLVL, string sciezkaIkony
            
             Ekwipunek.Add(new Hełm("Bylejaka Czapka", 1, 0, 0, "ms-appx:///Assets//NPCimages//helm.png"));
-            Zbroja = new Zbroja("Bylejaka Czapka", 1, 0, 0, "ms-appx:///Assets//NPCimages//helm.png");
-            Tarcza = new Tarcza("Bylejaka Czapka", 1, 0, 0, "ms-appx:///Assets//NPCimages//helm.png");
-            Buty = new Buty("Bylejaka Czapka", 1, 0, 0, "ms-appx:///Assets//NPCimages//helm.png");
-            Spodnie = new Spodnie("Bylejaka Czapka", 1, 0, 0, "ms-appx:///Assets//NPCimages//helm.png");
-            Bron = new Broń("Bylejaka Czapka", 1, 0, 0, "ms-appx:///Assets//NPCimages//helm.png");
+            Ekwipunek.Add(new Zbroja("Bylejaka Zbroja", 1, 0, 0, "ms-appx:///Assets//NPCimages//zbroja.png"));
+            Ekwipunek.Add(new Tarcza("Bylejaka Tarcza", 1, 0, 0, "ms-appx:///Assets//NPCimages//tarcza.png"));
+            Ekwipunek.Add(new Buty("Bylejakie Buty", 1, 0, 0, "ms-appx:///Assets//NPCimages//buty.png"));
+            Ekwipunek.Add(new Spodnie("Bylejakie Spodnie", 1, 0, 0, "ms-appx:///Assets//NPCimages//spodnie.png"));
+            Ekwipunek.Add(new Broń("Bylejaki miecz", 1, 0, 0, "ms-appx:///Assets//NPCimages//miecz.png"));
 
         }
 
         #endregion
+
+        #region Metody
+
+        public void ZaluzPrzedmiot(Przedmiot przedmiot)
+        {
+            if (przedmiot.WymaganyLVL <= Poziom)
+            {
+                if (przedmiot is Hełm)
+                {
+                    if (Helm != null)
+                        Helm.Zalozony = false;
+                    Helm = (Hełm)przedmiot;
+                }
+                else if (przedmiot is Zbroja)
+                {
+                    if (Zbroja != null)
+                        Zbroja.Zalozony = false;
+                    Zbroja = (Zbroja)przedmiot;
+                }
+                else if (przedmiot is Tarcza)
+                {
+                    if (Tarcza != null)
+                        Tarcza.Zalozony = false;
+                    Tarcza = (Tarcza)przedmiot;
+                }
+                else if (przedmiot is Buty)
+                {
+                    if (Buty != null)
+                        Buty.Zalozony = false;
+                    Buty = (Buty)przedmiot;
+                }
+                else if (przedmiot is Spodnie)
+                {
+                    if (Spodnie != null)
+                        Spodnie.Zalozony = false;
+                    Spodnie = (Spodnie)przedmiot;
+                }
+                else if (przedmiot is Broń)
+                {
+                    if (Bron != null)
+                        Bron.Zalozony = false;
+                    Bron = (Broń)przedmiot;
+                    Bron.Zalozony = true;
+                }
+                przedmiot.Zalozony = true;
+            }
+            
+        }
+
+        public void zdejmijPrzedmiot(Przedmiot przedmiot)
+        {
+            string obraz = "ms-appx:///Assets//plus.png"; //SEBA TU DAJ ITEM 100% PRZEZROCZYSTY
+            if (przedmiot is Hełm)
+            {
+                if (Helm != null)
+                    Helm.Zalozony = false;
+                Helm = new Hełm("", 0, 0, 0, obraz);
+            }
+            else if (przedmiot is Zbroja)
+            {
+                Zbroja.Zalozony = false;
+                Zbroja = new Zbroja("", 0, 0, 0, obraz);
+            }
+            else if (przedmiot is Tarcza)
+            {
+                
+                    Tarcza.Zalozony = false;
+                Tarcza = new Tarcza("", 0, 0, 0, obraz);
+            }
+            else if (przedmiot is Buty)
+            {
+                
+                    Buty.Zalozony = false;
+                Buty = new Buty("", 0, 0, 0, obraz);
+            }
+            else if (przedmiot is Spodnie)
+            {
+                Spodnie.Zalozony = false;
+                Spodnie = new Spodnie("", 0, 0, 0, obraz);
+            }
+            else if (przedmiot is Broń)
+            {
+                Bron.Zalozony = false;
+                Bron = new Broń("", 0, 0, 0, obraz);
+            }
+        }
+
+        #endregion
+
     }
 }

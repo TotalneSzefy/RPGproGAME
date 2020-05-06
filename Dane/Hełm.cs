@@ -12,5 +12,9 @@ namespace RPG.Dane
         { 
         
         }
+        public Hełm()
+        {
+
+        }
     }
 }

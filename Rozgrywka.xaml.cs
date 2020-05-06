@@ -68,18 +68,14 @@ namespace RPG
 
         private void Ekwipunek_DoubleTapped(object sender, DoubleTappedRoutedEventArgs e)
         {
-            Hełm nowyHelm = (Hełm)Ekwipunek_ListBox.SelectedItem;
-            if (nowyHelm.Zalozony == false)
-            {
-                nowyHelm.Zalozony = true;
-                bohater.Helm = nowyHelm;
-            }
+            Przedmiot item = (Przedmiot)Ekwipunek_ListBox.SelectedItem;
+            if(item.Zalozony == false)
+            bohater.ZaluzPrzedmiot(item);
             else
-            {
-                nowyHelm.Zalozony = false;
-                bohater.Helm = null;
-            }
+                bohater.zdejmijPrzedmiot(item);
         }
+
+
         Rozmiary rozmiary = new Rozmiary();
         private void Page_SizeChanged(object sender, Windows.UI.Xaml.SizeChangedEventArgs e)
         {

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace RPG.Dane
 {
-    public class Przedmiot//: INotifyPropertyChanged
+    public class Przedmiot : INotifyPropertyChanged
     {
         private string nazwa;
         private int ilosc;
@@ -16,7 +16,7 @@ namespace RPG.Dane
         private string sciezkaIkony;
         private bool zalozony;
 
-        //public event PropertyChangedEventHandler PropertyChanged = delegate { };
+        public event PropertyChangedEventHandler PropertyChanged = delegate { };
 
 
 
@@ -31,7 +31,7 @@ namespace RPG.Dane
             set
             {
                 zalozony = value;
-                //PropertyChanged(this, new PropertyChangedEventArgs("Zalozony"));
+                PropertyChanged(this, new PropertyChangedEventArgs("Zalozony"));
             }
         }
 
@@ -43,6 +43,10 @@ namespace RPG.Dane
             WymaganyLVL = wymaganyLVL;
             SciezkaIkony = sciezkaIkony;
             Zalozony = false;
+        }
+        public Przedmiot()
+        {
+
         }
 
     }

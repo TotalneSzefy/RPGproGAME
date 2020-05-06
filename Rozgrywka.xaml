@@ -187,9 +187,10 @@
                 <DataTemplate>
                     <StackPanel Height="50">
                         <RelativePanel>
-                            <TextBlock x:Name="imieBlock" Text="{Binding Nazwa}" FontSize="32"/>
-                            <TextBlock x:Name="nazwiskoBlock" Text="{Binding Cena}" RelativePanel.RightOf="imieBlock" Margin="5,0,0,0" FontSize="32"/>
-                            <Image Source="{Binding SciezkaIkony}" RelativePanel.RightOf="nazwiskoBlock" Height="40" Width="40" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="20,0,0,0"/>
+                            <TextBlock x:Name="NazwaPrzedmiotu" Text="{Binding Nazwa}" FontSize="32"/>
+                            <TextBlock x:Name="WymaganyPoziom" Text="{Binding WymaganyLVL}" RelativePanel.RightOf="NazwaPrzedmiotu" Margin="5,0,0,0" FontSize="32"/>
+                            <TextBlock x:Name="CzyZalozony" Text="{Binding Zalozony}" RelativePanel.RightOf="Ikona" Margin="5,0,0,0" FontSize="32"/>
+                            <Image x:Name="Ikona" Source="{Binding SciezkaIkony}" RelativePanel.RightOf="WymaganyPoziom" Height="40" Width="40" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="20,0,0,0"/>
                         </RelativePanel>
                     </StackPanel>
                 </DataTemplate>
