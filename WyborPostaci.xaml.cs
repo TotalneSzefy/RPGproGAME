@@ -29,7 +29,7 @@ namespace RPG
         }
 
         
-
+        //komentarz dla zmiany xD
 
 
         private void wroc_button_Click(object sender, RoutedEventArgs e)
