@@ -31,7 +31,7 @@ namespace RPG
         public MainPage()
         {
             this.InitializeComponent();
-           
+           //test komentarz
 
         }
 
