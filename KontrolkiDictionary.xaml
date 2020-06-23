@@ -23,6 +23,11 @@
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="FontFamily" Value="Assets\czcionka.ttf#Breathe Fire II"/>
     </Style>
-
+    <Style TargetType="TextBox">
+        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="FontFamily" Value="Assets\czcionka.ttf#Breathe Fire II"/>
+    </Style>
 
 </ResourceDictionary>

@@ -133,6 +133,9 @@
     <Compile Include="Karczma.xaml.cs">
       <DependentUpon>Karczma.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Katakumby.xaml.cs">
+      <DependentUpon>Katakumby.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -141,6 +144,9 @@
       <DependentUpon>Rozgrywka.xaml</DependentUpon>
     </Compile>
     <Compile Include="Rozmiary.cs" />
+    <Compile Include="Walka.xaml.cs">
+      <DependentUpon>Walka.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WyborPostaci.xaml.cs">
       <DependentUpon>WyborPostaci.xaml</DependentUpon>
     </Compile>
@@ -151,12 +157,33 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\1.png" />
+    <Content Include="Assets\2.png" />
+    <Content Include="Assets\3.png" />
+    <Content Include="Assets\4.png" />
+    <Content Include="Assets\5.png" />
+    <Content Include="Assets\Buty\butyNowicjusza.png" />
+    <Content Include="Assets\Buty\butySmoka.png" />
+    <Content Include="Assets\Buty\diamentoweButy.png" />
+    <Content Include="Assets\Buty\rycerskieButy.png" />
+    <Content Include="Assets\Buty\skorzaneButy.png" />
+    <Content Include="Assets\Helmy\helmBarbarzyncy.png" />
+    <Content Include="Assets\Helmy\helmMnicha.png" />
+    <Content Include="Assets\Helmy\helmNowicjusza.png" />
+    <Content Include="Assets\Helmy\KaKaKask.png" />
+    <Content Include="Assets\Helmy\rycerskiHelm.png" />
     <Content Include="Assets\karczma.jpg" />
     <Content Include="Assets\karczma2.png" />
     <Content Include="Assets\karczma3.png" />
     <Content Include="Assets\Karzel.jpg" />
     <Content Include="Assets\karzel_ikona.jpg" />
+    <Content Include="Assets\katakumby.jpg" />
     <Content Include="Assets\miecz.png" />
+    <Content Include="Assets\Miecze\antyczny.png" />
+    <Content Include="Assets\Miecze\barbarzyncy.png" />
+    <Content Include="Assets\Miecze\dlugiMiecz.png" />
+    <Content Include="Assets\Miecze\katana.png" />
+    <Content Include="Assets\Miecze\szabla.png" />
     <Content Include="Assets\NPCimages\buty.png" />
     <Content Include="Assets\NPCimages\helm.png" />
     <Content Include="Assets\NPCimages\miecz.png" />
@@ -167,10 +194,31 @@
     <Content Include="Assets\plus.png" />
     <Content Include="Assets\Postacie\Karzel1.png" />
     <Content Include="Assets\Postacie\wojownik_ikona3.png" />
+    <Content Include="Assets\Potki\potka1.png" />
+    <Content Include="Assets\Potki\potka2.png" />
+    <Content Include="Assets\Potki\potka3.png" />
+    <Content Include="Assets\Potki\potka4.png" />
+    <Content Include="Assets\Potki\potka5.png" />
+    <Content Include="Assets\Potwory\murlok.png" />
     <Content Include="Assets\rozgrywka_tło.jpg" />
+    <Content Include="Assets\Spodnie\adasie.png" />
+    <Content Include="Assets\Spodnie\jeansy.png" />
+    <Content Include="Assets\Spodnie\porwaneGacie.png" />
+    <Content Include="Assets\Spodnie\skorzaneSpodnie.png" />
+    <Content Include="Assets\Spodnie\spodnieKowala.png" />
+    <Content Include="Assets\Tarcze\diamentowaTarcza.png" />
+    <Content Include="Assets\Tarcze\drewnianaTarcza.png" />
+    <Content Include="Assets\Tarcze\tarczaBojowa.png" />
+    <Content Include="Assets\Tarcze\tarczaNowicjusza.png" />
+    <Content Include="Assets\Tarcze\tarczaWikinga.png" />
     <Content Include="Assets\wojownik.jpg" />
     <Content Include="Assets\wojownik_ikona.jpg" />
     <Content Include="Assets\WyborPostaci_Tło.jpg" />
+    <Content Include="Assets\Zbroje\plytowaZbroja.png" />
+    <Content Include="Assets\Zbroje\skorzanaZbroja.png" />
+    <Content Include="Assets\Zbroje\zbrojaAsasyna.png" />
+    <Content Include="Assets\Zbroje\zbrojaDowodcy.png" />
+    <Content Include="Assets\Zbroje\zelaznaZbroja.png" />
     <Content Include="Assets\Zwiadowca.jpg" />
     <Content Include="Assets\zwiadowca_ikona.jpg" />
     <Content Include="Properties\Default.rd.xml" />
@@ -191,6 +239,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Katakumby.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="KontrolkiDictionary.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -200,6 +252,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Rozgrywka.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Walka.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

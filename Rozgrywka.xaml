@@ -40,7 +40,7 @@
                         </RelativePanel>
                     </StackPanel>
                 </NavigationViewItem>
-                <NavigationViewItem Tag="domek">
+                <NavigationViewItem Tag="domek" x:Name="Katakumby" Tapped="Katakumby_Tapped">
                     <StackPanel>
                         <RelativePanel>
                             <Image x:Name="obrazek3" Source="Assets\\karzel_ikona.jpg" Height="30" Width="30"/>
@@ -182,7 +182,7 @@
         </StackPanel>
         
         
-        <ListBox Margin="20,10,20,10" Grid.Column="4" Grid.Row="1" Grid.RowSpan="3" ItemsSource="{x:Bind bohater.Ekwipunek}"   Name="Ekwipunek_ListBox" Background="#59000000" DoubleTapped="Ekwipunek_DoubleTapped">
+        <ListBox Margin="20,10,20,10" Grid.Column="4" Grid.Row="1" Grid.RowSpan="3" ItemsSource="{x:Bind bohater.Ekwipunek}"   Name="Ekwipunek_ListBox" Background="#59000000" DoubleTapped="Ekwipunek_DoubleTapped" SelectionChanged="Ekwipunek_ListBox_SelectionChanged">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Height="50">

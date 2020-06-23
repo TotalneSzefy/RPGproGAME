@@ -21,7 +21,7 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Image Source="Assets//karczma2.png" Stretch="Fill" Grid.ColumnSpan="4" Grid.RowSpan="4" />
-        <TextBlock Text="TAWERNA" Grid.Row="0" Grid.ColumnSpan="4" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="250"/>
+        <TextBlock Text="TAWERNA" Grid.Row="0" Grid.ColumnSpan="4" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="250" Foreground="#FFD0ECFF"/>
         <Button x:Name="wroc_Btn" HorizontalAlignment="Right" Grid.Row="0" Grid.Column="4" VerticalAlignment="Top"
                 Margin="20,20,20,20" Content="Wroc" Background="#59000000" Tapped="wroc_Btn_Tapped" Foreground="#FF615B5B" Width="300"/>
         <StackPanel Grid.Row="1" Grid.Column="0" Background="#66000000" Margin="20,20,20,20" CornerRadius="30" BorderThickness="6" BorderBrush="Black"/>
@@ -38,20 +38,21 @@
 
 
         <Image Margin="100,60,100,60" Stretch="Fill" x:Name="Bronie" Grid.Row="1" Grid.Column="0" Tapped="Bronie_Tapped" Source="ms-appx:///Assets///NPCimages/miecz.png" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <Image Margin="100,60,100,60" Stretch="Fill" x:Name="Tarcze" Grid.Row="1" Grid.Column="1" Tapped="Bronie_Tapped" Source="ms-appx:///Assets///NPCimages/tarcza.png" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <Image Margin="100,60,100,60" Stretch="Fill" x:Name="buty" Grid.Row="1" Grid.Column="2" Tapped="Bronie_Tapped" Source="ms-appx:///Assets///NPCimages/buty.png" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <Image Margin="100,60,100,60" Stretch="Fill" x:Name="helmy" Grid.Row="2" Grid.Column="0" Tapped="Bronie_Tapped" Source="ms-appx:///Assets///NPCimages/helm.png" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <Image Margin="100,60,100,60" Stretch="Fill" x:Name="zbroje" Grid.Row="2" Grid.Column="1" Tapped="Bronie_Tapped" Source="ms-appx:///Assets///NPCimages/zbroja.png" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <Image Margin="100,60,100,60" Stretch="Fill" x:Name="spodnie" Grid.Row="3" Grid.Column="2" Tapped="Bronie_Tapped" Source="ms-appx:///Assets///NPCimages/spodnie.png" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Image Margin="100,60,100,60" Stretch="Fill" x:Name="Tarcze" Grid.Row="1" Grid.Column="1" Tapped="Tarcze_Tapped" Source="ms-appx:///Assets///NPCimages/tarcza.png" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Image Margin="100,60,100,60" Stretch="Fill" x:Name="buty" Grid.Row="1" Grid.Column="2" Tapped="buty_Tapped" Source="ms-appx:///Assets///NPCimages/buty.png" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Image Margin="100,60,100,60" Stretch="Fill" x:Name="helmy" Grid.Row="2" Grid.Column="0" Tapped="helmy_Tapped" Source="ms-appx:///Assets///NPCimages/helm.png" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Image Margin="100,60,100,60" Stretch="Fill" x:Name="zbroje" Grid.Row="2" Grid.Column="1" Tapped="zbroje_Tapped" Source="ms-appx:///Assets///NPCimages/zbroja.png" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Image Margin="100,60,100,60" Stretch="Fill" x:Name="spodnie" Grid.Row="3" Grid.Column="2" Tapped="spodnie_Tapped" Source="ms-appx:///Assets///NPCimages/spodnie.png" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
-        <ListBox Margin="50,300,50,50" Grid.Column="4" Grid.RowSpan="5" ItemsSource="{Binding listPerson}"   Name="listBoxPerson" Background="#59000000">
+        <ListBox Margin="50,300,50,50" Grid.Column="4" Grid.RowSpan="5" Name="sklepListBox" Background="#59000000">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel Height="50">
+                    <StackPanel Height="100">
                         <RelativePanel>
-                            <TextBlock x:Name="imieBlock" Text="{Binding Imie}" FontSize="32"/>
-                            <TextBlock x:Name="nazwiskoBlock" Text="{Binding Nazwisko}" RelativePanel.RightOf="imieBlock" Margin="5,0,0,0" FontSize="32"/>
-                            <Image Source="{Binding Zdjecie}" RelativePanel.RightOf="nazwiskoBlock" Height="40" Width="40" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="20,0,0,0"/>
+                            <TextBlock Width="280" Foreground="AliceBlue" x:Name="NazwaPrzedmiotu" Text="{Binding Nazwa}" FontSize="32" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <TextBlock Foreground="AliceBlue" x:Name="WymaganyPoziom" Text="{Binding WymaganyLVL}" RelativePanel.RightOf="Ikona" Margin="45,0,0,0" FontSize="32" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <TextBlock Foreground="AliceBlue" x:Name="Cena" Text="{Binding Cena}" RelativePanel.RightOf="WymaganyPoziom" Margin="45,0,0,0" FontSize="32" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <Image x:Name="Ikona" Source="{Binding SciezkaIkony}" RelativePanel.RightOf="NazwaPrzedmiotu" Height="100" Width="100" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="45,0,0,0"/>
                         </RelativePanel>
                     </StackPanel>
                 </DataTemplate>

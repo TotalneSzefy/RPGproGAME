@@ -1,0 +1,42 @@
+﻿<Page
+    x:Class="RPG.Walka"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:RPG"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Foreground="#FF7A5555">
+
+    <Grid Background="#FFF1C9C9" >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Image x:Name="tlo" Source="{x:Bind ustawienia.Tlo, Mode=OneWay}" Stretch="Fill" Grid.ColumnSpan="6" Grid.RowSpan="6" />
+        <Button Content="Wróć" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="AliceBlue" Click="Button_Click" />
+
+        <!--no zeby to okienko wyswietlac trzeba bedzie przy utworzeniu bohatera po prostu zrobic zmienna ktora 
+        zapamieta jaka mamy postac i w zaleznosci od tego zbinduje sie tu dana postać-->
+        <Image x:Name="twojBohater" Source = "ms-appx:///Assets//Postacie//Karzel1.png" Grid.Row="1" Grid.Column="1"/>
+        
+        <!--tu bedzie potwór, potwór bedzie losowany ze zbioru mobow wiec ta ścieżka też bedize losowa,
+        zrobie folder gdzie beda ikony mobow i po prostu beda nazwane tak jak identyfikator moba czy cos, sie zoabczy-->
+        <Image x:Name="potwor" Source = "ms-appx:///Assets//Potwory//murlok.png" Grid.Row="1" Grid.Column="3"/>
+        
+        
+
+
+    </Grid>
+</Page>

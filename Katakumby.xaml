@@ -1,0 +1,56 @@
+﻿<Page
+    x:Class="RPG.Katakumby"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:RPG"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid Background="YellowGreen">
+
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Image Source="Assets//katakumby.jpg" Stretch="Fill" Grid.ColumnSpan="6" Grid.RowSpan="6" />
+
+
+        <Button HorizontalAlignment="Center" VerticalAlignment="Center" Content="Wróć" Click="Button_Click" Grid.Column="1"/>
+        <Button HorizontalAlignment="Center" VerticalAlignment="Center" Content="Walcz!" x:Name="walcz_BTN" Grid.Column="2" FontSize="150" Click="walcz_BTN_Click"/>
+     <!--przycisk kupowania, po kliknieciu itemek zaznaczony w listboxie leci do ekwipunku, ekwipunek bedzie sie wyswietlał w trakcie walki i mozna bedzie wtedy skorzystać-->
+        <Button HorizontalAlignment="Center" VerticalAlignment="Center" Content="Kup" x:Name="kup_BTN" Grid.Column="3"/>
+
+
+        <!--TO JEST LISTBOX DO KUPOWANIA POTEK PRZED WALKĄ, OBRAZKI POTEK ZNAJDUJĄ SIĘ W: ASSETS -> POTKI.
+        TRZEBA KLASE, MYSLE ZE STARCZY IMAG, NAZWA + CO LECZY I TYLE, RESZTA WG UZNANIA,
+        3 FIOLETOWE PROPONUJE JAKO 3 ROZMIARY POTKI NA HP A 2 POZOSTAŁE MOZE BYC ZWIEKSZENIE ATAKU NP I COS JESZCZE EMA POZDRO -->
+        <ListBox Margin="50,50,50,50" Grid.Column="1" Grid.Row="1" Grid.RowSpan="2" Grid.ColumnSpan="3" Name="sklepPotekListBox" Background="#59000000">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Height="100">
+                        <RelativePanel>
+                            <!--<TextBlock Width="280" Foreground="AliceBlue" x:Name="NazwaPrzedmiotu" Text="{Binding Nazwa}" FontSize="32" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <TextBlock Foreground="AliceBlue" x:Name="WymaganyPoziom" Text="{Binding WymaganyLVL}" RelativePanel.RightOf="Ikona" Margin="45,0,0,0" FontSize="32" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <TextBlock Foreground="AliceBlue" x:Name="Cena" Text="{Binding Cena}" RelativePanel.RightOf="WymaganyPoziom" Margin="45,0,0,0" FontSize="32" HorizontalAlignment="Center" VerticalAlignment="Center"/>-->
+                            <Image x:Name="Ikona" Source="{Binding SciezkaIkony}" RelativePanel.RightOf="NazwaPrzedmiotu" Height="100" Width="100" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="45,0,0,0"/>
+                        </RelativePanel>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+
+
+    </Grid>
+</Page>

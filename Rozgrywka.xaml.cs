@@ -104,5 +104,15 @@ namespace RPG
 
             }
         }
+
+        private void Ekwipunek_ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void Katakumby_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(Katakumby));
+        }
     }
 }
