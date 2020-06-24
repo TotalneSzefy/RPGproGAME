@@ -33,7 +33,7 @@ namespace RPG.Dane
         public static Bohater Instancja { get; set; }
 
         #region Właściwości
-        public int Złoto { get => zloto; set => zloto = value; }
+        public int Zloto { get => zloto; set => zloto = value; }
         public int Sila
         {
             get => sila;

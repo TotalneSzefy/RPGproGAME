@@ -20,11 +20,13 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition/>
+            <RowDefinition Height="0.3*"/>
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Image Source="Assets//katakumby.jpg" Stretch="Fill" Grid.ColumnSpan="6" Grid.RowSpan="6" />
 
+        <TextBlock x:Name="zloto_TB" Text="Złoto: kurwa milion" Foreground="#FFFFF85B" Grid.Row="1" Grid.Column="2" FontSize="50"/>
 
         <Button HorizontalAlignment="Center" VerticalAlignment="Center" Content="Wróć" Click="Button_Click" Grid.Column="1"/>
         <Button HorizontalAlignment="Center" VerticalAlignment="Center" Content="Walcz!" x:Name="walcz_BTN" Grid.Column="2" FontSize="150" Click="walcz_BTN_Click"/>
@@ -35,7 +37,7 @@
         <!--TO JEST LISTBOX DO KUPOWANIA POTEK PRZED WALKĄ, OBRAZKI POTEK ZNAJDUJĄ SIĘ W: ASSETS -> POTKI.
         TRZEBA KLASE, MYSLE ZE STARCZY IMAG, NAZWA + CO LECZY I TYLE, RESZTA WG UZNANIA,
         3 FIOLETOWE PROPONUJE JAKO 3 ROZMIARY POTKI NA HP A 2 POZOSTAŁE MOZE BYC ZWIEKSZENIE ATAKU NP I COS JESZCZE EMA POZDRO -->
-        <ListBox Margin="50,50,50,50" Grid.Column="1" Grid.Row="1" Grid.RowSpan="2" Grid.ColumnSpan="3" Name="sklepPotekListBox" Background="#59000000">
+        <ListBox Margin="50,50,50,50" Grid.Column="1" Grid.Row="2" Grid.RowSpan="2" Grid.ColumnSpan="3" Name="sklepPotekListBox" Background="#59000000">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Height="100">
