@@ -1,10 +1,13 @@
-﻿using System;
+﻿using RPG.Dane;
+using RPG.Logika;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -24,12 +27,28 @@ namespace RPG
     {
         Rozmiary ustawienia = new Rozmiary();
         Random rand = new Random();
-        
+
+        Potwór potwor;
+        int nr_rundy = 1;
         public Walka()
         {
+            potwor = new Potwór("Murlok", "ms-appx:///Assets//Potwory//murlok.png", 1, 100);
+            znajdzPotwora();
             this.InitializeComponent();
             int losowe = rand.Next(1, 5);
             ustawienia.Tlo = "Assets//"+losowe+".png";
+            Bohater.Instancja.Zycie = 100;
+            
+        }
+
+        private void znajdzPotwora()
+        {
+            
+            potwor.Obrazenia = rand.Next(0,50);
+            potwor.Obrona = rand.Next(0, 50);
+            potwor.SzansaTrafienia = rand.Next(0, 50);
+            potwor.SzansaUnik = rand.Next(0, 50);
+            potwor.Zycie = 100;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -38,6 +57,45 @@ namespace RPG
             {
                 Frame.GoBack();
             }
+        }
+
+        private void atak_BTN_Click(object sender, RoutedEventArgs e)//Zadaj Cios
+         {
+            WalkaClass walkaClass = new WalkaClass();
+            walkaClass.Atakuj(potwor);
+            if (potwor.Zycie > 0)
+                walkaClass.Bron_sie(potwor);
+            else
+            {
+                wygralesWalke();
+            }
+            if (Bohater.Instancja.Zycie <= 0)
+            {
+                przegralesWalke();
+            }
+        }
+
+        private async void przegralesWalke()
+        {
+            var messageDialog = new MessageDialog("Jesteś Żałosny. Przegrałeś");
+            await messageDialog.ShowAsync();
+            if (Frame.CanGoBack)
+            {
+                Frame.GoBack();
+            }
+        }
+
+        private void wygralesWalke()
+        {
+            Bohater.Instancja.Doświadczenie += potwor.exp;
+            Bohater.Instancja.Zloto += potwor.zloto;
+            if (potwor.przedmiot != null)
+            {
+                Bohater.Instancja.Ekwipunek.Add(potwor.przedmiot);
+
+            }
+            znajdzPotwora();
+            nr_rundy++;
         }
     }
 
