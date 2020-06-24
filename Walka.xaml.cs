@@ -173,7 +173,7 @@ namespace RPG
             }
             else
             {
-                ShowMessage("To cię zabije!");
+                await ShowMessage("To cię zabije!");
             }
         }
     }
