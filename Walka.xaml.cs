@@ -33,7 +33,7 @@ namespace RPG
         Potwór potwor;
         
 
-        public ObservableCollection<Użytkowe> posiadanePoty = new ObservableCollection<Użytkowe>();
+        public ObservableCollection<Przedmiot> posiadanePoty = new ObservableCollection<Przedmiot>();
         WalkaClass walkaClass = new WalkaClass();
 
         public Walka()
@@ -42,15 +42,19 @@ namespace RPG
             znajdzPotwora();
             this.InitializeComponent();
             int losowe = rand.Next(1, 5);
+            
             ustawienia.Tlo = "Assets//"+losowe+".png";
             Bohater.Instancja.Zycie = 100;
             ustawienia.NumerRundy = 1;
+
+            
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
-            posiadanePoty = (ObservableCollection<Użytkowe>)e.Parameter;
+            posiadanePoty = (ObservableCollection<Przedmiot>)e.Parameter;
+            PotekListBox.ItemsSource = posiadanePoty;
         }
 
         private void znajdzPotwora()
@@ -110,7 +114,7 @@ namespace RPG
         }
         private async void PotekListBox_DoubleTapped(object sender, DoubleTappedRoutedEventArgs e)
         {
-            Użytkowe potka =(Użytkowe) PotekListBox.SelectedItem;
+            Użytkowe potka =(Użytkowe)PotekListBox.SelectedItem;
             if (potka != null)
             {
                 switch (potka.rodzaj)
@@ -176,6 +180,11 @@ namespace RPG
             {
                 await ShowMessage("To cię zabije!");
             }
+        }
+
+        private void PotekListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 
