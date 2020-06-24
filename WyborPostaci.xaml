@@ -80,7 +80,7 @@
         
         <TextBox x:Name="NazwaPostaci_TB" Grid.Row="4" Grid.Column="1" Margin="5,5,5,5" VerticalAlignment="Bottom" Height="auto"
                  HorizontalAlignment="Center" Width="auto" 
-                 FontFamily="Assets\czcionka.ttf#Breathe Fire II" Text="Nazwa postaci"/>
+                 FontFamily="Assets\czcionka.ttf#Breathe Fire II" PlaceholderText="Nazwa postaci"/>
 
     </Grid>
 </Page>

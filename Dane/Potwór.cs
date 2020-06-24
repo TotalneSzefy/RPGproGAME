@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RPG.Dane
 {
-    class Potwór
+    public class Potwór
     {
     }
 }

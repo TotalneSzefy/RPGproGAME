@@ -13,28 +13,11 @@ namespace RPG
     /// </summary>
     public sealed partial class Rozgrywka : Page
     {
-        Bohater bohater { get; set; }
-
-        protected override void OnNavigatedTo(NavigationEventArgs e)
-        {
-            base.OnNavigatedTo(e);
-            bohater = (Bohater)e.Parameter;
-        }
-
         public Rozgrywka()
         {
             this.InitializeComponent();
         }
 
-        private void postac_menuItem_RightTapped(object sender, RightTappedRoutedEventArgs e)
-        {
-
-        }
-
-        private void postac_menuItem_Tapped(object sender, TappedRoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(Rozgrywka));
-        }
 
         private void NavigationPanel_Wyjdz_Tapped(object sender, TappedRoutedEventArgs e)
         {
@@ -48,31 +31,32 @@ namespace RPG
 
         private void zwiekszSila_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
         {
-            bohater.Sila++;
+            Bohater.Instancja.Sila++;
+            //Bohater.Ins.Sila++;
         }
 
         private void zwiekszInt_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
         {
-            bohater.Inteligencja++;
+            Bohater.Instancja.Inteligencja++;
         }
 
         private void dodajZrecznosc_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
         {
-            bohater.Zrecznosc++;
+            Bohater.Instancja.Zrecznosc++;
         }
 
         private void dodajWytrzymalosc_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
         {
-            bohater.Wytrzymalosc++;
+            Bohater.Instancja.Wytrzymalosc++;
         }
 
         private void Ekwipunek_DoubleTapped(object sender, DoubleTappedRoutedEventArgs e)
         {
             Przedmiot item = (Przedmiot)Ekwipunek_ListBox.SelectedItem;
             if(item.Zalozony == false)
-            bohater.ZaluzPrzedmiot(item);
+                Bohater.Instancja.ZaluzPrzedmiot(item);
             else
-                bohater.zdejmijPrzedmiot(item);
+                Bohater.Instancja.zdejmijPrzedmiot(item);
         }
 
 
@@ -104,12 +88,6 @@ namespace RPG
 
             }
         }
-
-        private void Ekwipunek_ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
         private void Katakumby_Tapped(object sender, TappedRoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(Katakumby));

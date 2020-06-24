@@ -59,6 +59,7 @@ namespace RPG
             sklepButy.Add(new Buty("Buty Smoka", 1, 1100, 16, "ms-appx:///Assets//Buty//butySmoka.png"));
             sklepButy.Add(new Buty("Diamentowe Buty", 1, 1300, 20, "ms-appx:///Assets//Buty//diamentoweButy.png"));
             #endregion
+
             #region Helmy
             sklepHelmy.Add(new Hełm("Helm Nowicjusza", 1, 300, 1, "ms-appx:///Assets//Helmy//helmNowicjusza.png"));
             sklepHelmy.Add(new Hełm("Helm Mnicha", 1, 1150, 9, "ms-appx:///Assets//Helmy//helmMnicha.png"));
@@ -66,6 +67,7 @@ namespace RPG
             sklepHelmy.Add(new Hełm("Helm Barbarzyńcy", 1, 4100, 22, "ms-appx:///Assets//Helmy//helmBarbarzyncy.png"));
             sklepHelmy.Add(new Hełm("KaKaKask", 1, 10000, 35, "ms-appx:///Assets//Helmy//KaKaKask.png"));
             #endregion
+
             #region Spodnie
             sklepSpodnie.Add(new Spodnie("Porwane Gacie", 1, 500, 1, "ms-appx:///Assets//Spodnie//porwaneGacie.png"));
             sklepSpodnie.Add(new Spodnie("Spodnie Kowala", 1, 1500, 6, "ms-appx:///Assets//Spodnie//spodnieKowala.png"));
@@ -73,6 +75,7 @@ namespace RPG
             sklepSpodnie.Add(new Spodnie("Skórzane Spodnie", 1, 10000, 17, "ms-appx:///Assets//Spodnie//skorzaneSpodnie.png"));
             sklepSpodnie.Add(new Spodnie("Tripaloski", 1, 50000, 25, "ms-appx:///Assets//Spodnie//adasie.png"));
             #endregion
+
             #region Zbroje
             sklepZbroje.Add(new Zbroja("Skórzana Zbroja", 1, 700, 1, "ms-appx:///Assets//Zbroje//skorzanaZbroja.png"));
             sklepZbroje.Add(new Zbroja("Zbroja Płytowa", 1, 1900, 6, "ms-appx:///Assets//Zbroje//plytowaZbroja.png"));

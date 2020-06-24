@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RPG.Dane
 {
-    class Spodnie : Przedmiot
+    public class Spodnie : Przedmiot
     {
         public Spodnie(string nazwa, int ilosc, int cena, int wymaganyLVL, string sciezkaIkony) : base(nazwa, ilosc, cena, wymaganyLVL, sciezkaIkony)
         {

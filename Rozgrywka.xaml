@@ -3,6 +3,7 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:RPG"
+    xmlns:Dane="using:RPG.Dane"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
@@ -27,7 +28,7 @@
         </Grid.RowDefinitions>
         <Image Source="Assets//rozgrywka_Tło.jpg" Stretch="Fill" Grid.ColumnSpan="10" Grid.RowSpan="6" />
 
-        <TextBlock Text="{x:Bind bohater.Imie}" FontSize="90" Grid.ColumnSpan="5" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock Text="{x:Bind Mode=OneTime, Path=Dane:Bohater.Instancja.Imie}" FontSize="90" Grid.ColumnSpan="5" VerticalAlignment="Center" HorizontalAlignment="Center"/>
 
         <NavigationView x:Name="PanelNawigacyjny" OpenPaneLength="250" PaneDisplayMode="Top"  CompactModeThresholdWidth="600" ExpandedModeThresholdWidth="1200" Grid.ColumnSpan="6" Height="130" VerticalAlignment="Bottom">
             <NavigationView.MenuItems>
@@ -70,26 +71,26 @@
 
         <!--ekwipunek założony-->
         <StackPanel Grid.Column="1" Grid.Row="1" Background="#59000000" BorderBrush="Black" BorderThickness="2" Margin="10,10,10,10">
-            <Image x:Name="helm" Source="{x:Bind bohater.Helm.SciezkaIkony, Mode=OneWay}" Stretch="Fill" />
+            <Image x:Name="helm" Source="{x:Bind Mode=OneWay, Path=Dane:Bohater.Instancja.Helm.SciezkaIkony}" Stretch="Fill" />
         </StackPanel>
         <StackPanel Grid.Column="1" Grid.Row="2" Background="#59000000" BorderBrush="Black" BorderThickness="2" Margin="10,10,10,10">
-            <Image x:Name="zbroja" Source="{x:Bind bohater.Zbroja.SciezkaIkony, Mode=OneWay}" Stretch="Fill" />
+            <Image x:Name="zbroja" Source="{x:Bind Mode=OneWay, Path=Dane:Bohater.Instancja.Zbroja.SciezkaIkony}" Stretch="Fill" />
         </StackPanel>
         <StackPanel Grid.Column="1" Grid.Row="3" Background="#59000000" BorderBrush="Black" BorderThickness="2" Margin="10,10,10,10">
-            <Image x:Name="kalesony" Source="{x:Bind bohater.Spodnie.SciezkaIkony, Mode=OneWay}" Stretch="Fill" />
+            <Image x:Name="kalesony" Source="{x:Bind Mode=OneWay, Path=Dane:Bohater.Instancja.Spodnie.SciezkaIkony}" Stretch="Fill" />
         </StackPanel>
         <StackPanel Grid.Column="3" Grid.Row="1" Background="#59000000" BorderBrush="Black" BorderThickness="2" Margin="10,10,10,10">
-            <Image x:Name="miecz"  Source="{x:Bind bohater.Bron.SciezkaIkony, Mode=OneWay}" Stretch="Fill"/>
+            <Image x:Name="miecz"  Source="{x:Bind Mode=OneWay, Path=Dane:Bohater.Instancja.Bron.SciezkaIkony}" Stretch="Fill"/>
         </StackPanel>
         <StackPanel Grid.Column="3" Grid.Row="2" Background="#59000000" BorderBrush="Black" BorderThickness="2" Margin="10,10,10,10">
-            <Image x:Name="tarcza" Source="{x:Bind bohater.Tarcza.SciezkaIkony, Mode=OneWay}" Stretch="Fill"/>
+            <Image x:Name="tarcza" Source="{x:Bind Mode=OneWay, Path=Dane:Bohater.Instancja.Tarcza.SciezkaIkony}" Stretch="Fill"/>
         </StackPanel>
         <StackPanel Grid.Column="3" Grid.Row="3" Background="#59000000" BorderBrush="Black" BorderThickness="2" Margin="10,10,10,10">
-            <Image x:Name="buty" Source="{x:Bind bohater.Buty.SciezkaIkony, Mode=OneWay}" Stretch="Fill"/>
+            <Image x:Name="buty" Source="{x:Bind Mode=OneWay, Path=Dane:Bohater.Instancja.Buty.SciezkaIkony}" Stretch="Fill"/>
         </StackPanel>
 
         <StackPanel Grid.Column="2" Grid.Row="1" Grid.RowSpan="3" Background="#59000000" BorderBrush="Black" BorderThickness="2" Margin="10,10,10,10">
-            <Image x:Name="ObrazPostaci" RelativePanel.RightOf="helm"  Source="{x:Bind bohater.SciezkaIkony}"  />
+            <Image x:Name="ObrazPostaci" RelativePanel.RightOf="helm"  Source="{x:Bind Mode=OneWay, Path=Dane:Bohater.Instancja.SciezkaIkony}"  />
 
         </StackPanel>
 
@@ -140,10 +141,10 @@
                 <TextBlock x:Name="Wytrzymalosc" Text="Wytrzymalosc:" FontSize="{x:Bind rozmiary.StatyFontSize1, Mode=OneWay}" Margin="3,3,3,3" RelativePanel.Below="Int" Grid.Row="4" Grid.Column="0" Foreground="#FFE0D1D1"/>
 
 
-                <TextBlock x:Name="SilaWartosc" Text="{x:Bind bohater.Sila, Mode=OneWay}" FontSize="{x:Bind rozmiary.StatyFontSize1, Mode=OneWay}"  Grid.Row="1" Grid.Column="1" Foreground="#FFB8A94F"/>
-                <TextBlock x:Name="IntWartosc" Text="{x:Bind bohater.Inteligencja, Mode=OneWay}" FontSize="{x:Bind rozmiary.StatyFontSize1, Mode=OneWay}"  RelativePanel.Below="Sila" Grid.Row="2" Grid.Column="1" Foreground="#FFB8A94F"/>
-                <TextBlock x:Name="ZrekaWartosc" Text="{x:Bind bohater.Zrecznosc, Mode=OneWay}" FontSize="{x:Bind rozmiary.StatyFontSize1, Mode=OneWay}"  RelativePanel.Below="Int" Grid.Row="3" Grid.Column="1" Foreground="#FFB8A94F"/>
-                <TextBlock x:Name="WytrzymaloscWartosc" Text="{x:Bind bohater.Wytrzymalosc, Mode=OneWay}" FontSize="{x:Bind rozmiary.StatyFontSize1, Mode=OneWay}" RelativePanel.Below="Int" Grid.Row="4" Grid.Column="1" Foreground="#FFB8A94F"/>
+                <TextBlock x:Name="SilaWartosc" Text="{x:Bind Mode=OneWay, Path=Dane:Bohater.Instancja.Sila}" FontSize="{x:Bind rozmiary.StatyFontSize1, Mode=OneWay}"  Grid.Row="1" Grid.Column="1" Foreground="#FFB8A94F"/>
+                <TextBlock x:Name="IntWartosc" Text="{x:Bind Mode=OneWay, Path=Dane:Bohater.Instancja.Inteligencja}" FontSize="{x:Bind rozmiary.StatyFontSize1, Mode=OneWay}"  RelativePanel.Below="Sila" Grid.Row="2" Grid.Column="1" Foreground="#FFB8A94F"/>
+                <TextBlock x:Name="ZrekaWartosc" Text="{x:Bind Mode=OneWay, Path=Dane:Bohater.Instancja.Zrecznosc}" FontSize="{x:Bind rozmiary.StatyFontSize1, Mode=OneWay}"  RelativePanel.Below="Int" Grid.Row="3" Grid.Column="1" Foreground="#FFB8A94F"/>
+                <TextBlock x:Name="WytrzymaloscWartosc" Text="{x:Bind Mode=OneWay, Path=Dane:Bohater.Instancja.Wytrzymalosc}" FontSize="{x:Bind rozmiary.StatyFontSize1, Mode=OneWay}" RelativePanel.Below="Int" Grid.Row="4" Grid.Column="1" Foreground="#FFB8A94F"/>
 
 
                 <Button x:Name="DodajSila" Height="{x:Bind rozmiary.StatyFontSize1, Mode=OneWay}" Width="{x:Bind rozmiary.StatyFontSize1, Mode=OneWay}" Grid.Row="1" Grid.Column="2" Click="zwiekszSila_Click">
@@ -173,16 +174,16 @@
                 <TextBlock x:Name="SzansaTrafienia" Text="Szansa trafienia:" FontSize="{x:Bind rozmiary.StatyFontSize1, Mode=OneWay}"  RelativePanel.Below="Int" Grid.Row="3" Grid.Column="3" Foreground="#FFFFF85B"/>
                 <TextBlock x:Name="SzansaNaUnik" Text="Szansa na unik:" FontSize="{x:Bind rozmiary.StatyFontSize1, Mode=OneWay}"  RelativePanel.Below="Int" Grid.Row="4" Grid.Column="3" Foreground="#FFFFF85B" Margin="0,9,0,0" VerticalAlignment="Top"/>
 
-                <TextBlock x:Name="AtakWartosc" Text="{x:Bind bohater.Obrazenia}" FontSize="{x:Bind rozmiary.StatyFontSize1, Mode=OneWay}"  Grid.Row="1" Grid.Column="4" Foreground="#FFFFDB00"/>
-                <TextBlock x:Name="ObronaWartosc" Text="{x:Bind bohater.Obrona}" FontSize="{x:Bind rozmiary.StatyFontSize1, Mode=OneWay}"  RelativePanel.Below="Sila" Grid.Row="2" Grid.Column="4" Foreground="#FFFFDB00"/>
-                <TextBlock x:Name="SzansaTrafieniaWartosc" Text="{x:Bind bohater.SzansaTrafienia}" FontSize="{x:Bind rozmiary.StatyFontSize1, Mode=OneWay}"  RelativePanel.Below="Int" Grid.Row="3" Grid.Column="4" Foreground="#FFFFDB00"/>
-                <TextBlock x:Name="SzansaNaUnikWartosc" Text="{x:Bind bohater.SzansaUnik}" FontSize="{x:Bind rozmiary.StatyFontSize1, Mode=OneWay}"  RelativePanel.Below="Int" Grid.Row="4" Grid.Column="4" Foreground="#FFFFDB00"/>
+                <TextBlock x:Name="AtakWartosc" Text="{x:Bind Mode=OneWay, Path=Dane:Bohater.Instancja.Obrazenia}" FontSize="{x:Bind rozmiary.StatyFontSize1, Mode=OneWay}"  Grid.Row="1" Grid.Column="4" Foreground="#FFFFDB00"/>
+                <TextBlock x:Name="ObronaWartosc" Text="{x:Bind Mode=OneWay, Path=Dane:Bohater.Instancja.Obrona}" FontSize="{x:Bind rozmiary.StatyFontSize1, Mode=OneWay}"  RelativePanel.Below="Sila" Grid.Row="2" Grid.Column="4" Foreground="#FFFFDB00"/>
+                <TextBlock x:Name="SzansaTrafieniaWartosc" Text="{x:Bind Mode=OneWay, Path=Dane:Bohater.Instancja.SzansaTrafienia}" FontSize="{x:Bind rozmiary.StatyFontSize1, Mode=OneWay}"  RelativePanel.Below="Int" Grid.Row="3" Grid.Column="4" Foreground="#FFFFDB00"/>
+                <TextBlock x:Name="SzansaNaUnikWartosc" Text="{x:Bind Mode=OneWay, Path=Dane:Bohater.Instancja.SzansaUnik}" FontSize="{x:Bind rozmiary.StatyFontSize1, Mode=OneWay}"  RelativePanel.Below="Int" Grid.Row="4" Grid.Column="4" Foreground="#FFFFDB00"/>
 
             </Grid>
         </StackPanel>
 
 
-        <ListBox Margin="20,10,20,10" Grid.Column="4" Grid.Row="1" Grid.RowSpan="3" ItemsSource="{x:Bind bohater.Ekwipunek}"   Name="Ekwipunek_ListBox" Background="#59000000" DoubleTapped="Ekwipunek_DoubleTapped" SelectionChanged="Ekwipunek_ListBox_SelectionChanged">
+        <ListBox Margin="20,10,20,10" Grid.Column="4" Grid.Row="1" Grid.RowSpan="3" ItemsSource="{x:Bind Mode=OneWay, Path=Dane:Bohater.Instancja.Ekwipunek}"   Name="Ekwipunek_ListBox" Background="#59000000" DoubleTapped="Ekwipunek_DoubleTapped">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Height="50">

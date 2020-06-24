@@ -1,6 +1,7 @@
 ﻿using RPG.Dane;
 using System;
 using System.Collections.Generic;
+using System.Dynamic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -54,22 +55,22 @@ namespace RPG
         #region Wybor postaci click
         private void Karzel_Clik(object sender, RoutedEventArgs e)
         {
-            if (!String.IsNullOrEmpty(NazwaPostaci_TB.Text))
+            if (!string.IsNullOrEmpty(NazwaPostaci_TB.Text))
             {
                 string imie = NazwaPostaci_TB.Text;
-                Bohater klasa = new Bohater(imie, "ms-appx:///Assets///Postacie/Karzel1.png", 1, 100, 12, 0, 3, 5);
-                otworzScanaRozgrywka(klasa);
+                Bohater.CreateStaticInstance(imie, "ms-appx:///Assets///Postacie/Karzel1.png", 1, 100, 12, 0, 3, 5);
+                otworzScanaRozgrywka();
             }
             
         }
 
         private async void Wojownik_Clik(object sender, RoutedEventArgs e)
         {
-            if (!String.IsNullOrEmpty(NazwaPostaci_TB.Text))
+            if (!string.IsNullOrEmpty(NazwaPostaci_TB.Text))
             {
                 string imie = NazwaPostaci_TB.Text;
-                Bohater klasa = new Bohater(imie, "ms-appx:///Assets///Postacie/wojownik.png", 1, 100, 7, 4, 4, 5);
-                otworzScanaRozgrywka(klasa);
+                Bohater.CreateStaticInstance(imie, "ms-appx:///Assets///Postacie/wojownik.png", 1, 100, 7, 4, 4, 5);
+                otworzScanaRozgrywka();
 
                 //wlasciwie taka linijka w każdym etapie gry służyłaby do zapisania postaci
                 string zapis = imie + ",ms-appx:///Assets///Postacie/wojownik.png" + ",1,100,7,4,4,5";
@@ -84,17 +85,17 @@ namespace RPG
 
         private void Zwiadowca_Click(object sender, RoutedEventArgs e)
         {
-            if (!String.IsNullOrEmpty(NazwaPostaci_TB.Text))
+            if (!string.IsNullOrEmpty(NazwaPostaci_TB.Text))
             {
                 string imie = NazwaPostaci_TB.Text;
-                Bohater klasa = new Bohater(imie, "ms-appx:///Assets///Postacie/Zwiadowca.png", 1, 100, 5, 5, 5, 5);
-                otworzScanaRozgrywka(klasa);
+                Bohater.CreateStaticInstance(imie, "ms-appx:///Assets///Postacie/Zwiadowca.png", 1, 100, 5, 5, 5, 5);
+                otworzScanaRozgrywka();
             }
         }
         #endregion
-        void otworzScanaRozgrywka(Bohater klasa)
+        void otworzScanaRozgrywka()
         {
-            this.Frame.Navigate(typeof(Rozgrywka),klasa);
+            this.Frame.Navigate(typeof(Rozgrywka));
         }
 
         Rozmiary rozmiary = new Rozmiary();

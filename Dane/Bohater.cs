@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace RPG.Dane
 {
-    class Bohater : Postać, INotifyPropertyChanged
+    public class Bohater : Postać, INotifyPropertyChanged
     {
         #region Pola
         private int doswiadczenie;
@@ -30,7 +30,7 @@ namespace RPG.Dane
         public ObservableCollection<Przedmiot> Ekwipunek = new ObservableCollection<Przedmiot>();
         public event PropertyChangedEventHandler PropertyChanged = delegate { };
 
-
+        public static Bohater Instancja { get; set; }
 
         #region Właściwości
         public int Złoto { get => zloto; set => zloto = value; }
@@ -70,6 +70,9 @@ namespace RPG.Dane
                 PropertyChanged(this, new PropertyChangedEventArgs("Wytrzymalosc"));
             }
         }
+
+        
+
         public int Doświadczenie { get => doswiadczenie; set => doswiadczenie = value; }
         internal Hełm Helm
         {
@@ -144,6 +147,12 @@ namespace RPG.Dane
             Ekwipunek.Add(new Broń("Bylejaki miecz", 1, 0, 0, "ms-appx:///Assets//NPCimages//miecz.png"));
 
         }
+
+        public static void CreateStaticInstance(string imie, string sciezkaIkony, int poziom, int życie, int siła, int inteligencja, int zrecznosc, int wytrzymalosc)
+        {
+            Instancja = new Bohater(imie, sciezkaIkony, poziom, życie, siła, inteligencja, zrecznosc, wytrzymalosc);
+        }
+
 
         #endregion
 

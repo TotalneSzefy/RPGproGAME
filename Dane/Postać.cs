@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace RPG.Dane 
 {
-    class Postać
+    public class Postać
     {
         #region Pola
         string imie;
