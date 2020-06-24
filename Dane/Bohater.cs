@@ -33,7 +33,14 @@ namespace RPG.Dane
         public static Bohater Instancja { get; set; }
 
         #region Właściwości
-        public int Zloto { get => zloto; set => zloto = value; }
+        public int Zloto
+        {
+            get => zloto; set
+            {
+                zloto = value;
+                PropertyChanged(this, new PropertyChangedEventArgs("Zloto"));
+            }
+        }
         public int Sila
         {
             get => sila;
@@ -137,7 +144,7 @@ namespace RPG.Dane
             this.Inteligencja = inteligencja;
             this.Zrecznosc = zrecznosc;
             this.Wytrzymalosc = wytrzymalosc;
-            this.zloto = 1000;
+            this.zloto = 5000;
             //string nazwa,int ilosc, int cena, int wymaganyLVL, string sciezkaIkony
            
             Ekwipunek.Add(new Hełm("Bylejaka Czapka", 1, 0, 0, "ms-appx:///Assets//NPCimages//helm.png"));
