@@ -14,7 +14,7 @@ namespace RPG.Dane
         string imie;
         string sciezkaIkony;
         int poziom;
-        int życie;
+        public int życie;
 
         int obrazenia;
         int obrona;
@@ -26,25 +26,28 @@ namespace RPG.Dane
         public string Imie { get => imie; set => imie = value; }
         public string SciezkaIkony { get => sciezkaIkony; set => sciezkaIkony = value; }
         public int Poziom { get => poziom; set => poziom = value; }
-        public int Życie { get => życie; set => życie = value; }
+        
         
 
 
         #region Konstruktory
 
-        public Postać(string imie, string sciezkaIkony, int poziom, int życie)
+        public Postać(string imie, string sciezkaIkony, int poziom)
         {
             this.Imie = imie;
             this.SciezkaIkony = sciezkaIkony;
             this.Poziom = poziom;
-            this.Życie = życie;
         }
 
+        public Postać()
+        {
+
+        }
         #endregion
 
-        
 
-        
+
+
 
     }
 }

@@ -136,6 +136,7 @@
     <Compile Include="Katakumby.xaml.cs">
       <DependentUpon>Katakumby.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Logika\WalkaClass.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -272,9 +273,7 @@
   <ItemGroup>
     <Content Include="Assets\czcionka.ttf" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Logika\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
       <Version>6.2.10</Version>

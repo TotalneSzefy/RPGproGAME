@@ -43,7 +43,15 @@ namespace RPG.Dane
 		public static Bohater Instancja { get; set; }
 
 		#region Właściwości
-		public int Zloto
+		public int Zycie
+        {
+            get => życie; set
+            {
+                życie = value;
+				PropertyChanged(this, new PropertyChangedEventArgs("Zycie"));
+			}
+        }
+        public int Zloto
 		{
 			get => zloto; set
 			{
@@ -156,6 +164,11 @@ namespace RPG.Dane
             set
             {
                 doswiadczenie = value;
+				if (doswiadczenie >= 1000)
+				{
+					doswiadczenie -= 1000;
+					Poziom++;
+				}
                 PropertyChanged(this, new PropertyChangedEventArgs("Doświadczenie"));
             }
         }
@@ -218,15 +231,16 @@ namespace RPG.Dane
 		#endregion
 
 		#region Kostruktory
-		public Bohater(string imie, string sciezkaIkony, int poziom, int życie, int siła, int inteligencja, int zrecznosc, int wytrzymalosc) : base(imie, sciezkaIkony, poziom, życie)
+		public Bohater(string imie, string sciezkaIkony, int poziom, int życie, int siła, int inteligencja, int zrecznosc, int wytrzymalosc) : base(imie, sciezkaIkony, poziom)
 		{
 			this.Sila = siła;
 			this.Inteligencja = inteligencja;
 			this.Zrecznosc = zrecznosc;
 			this.Wytrzymalosc = wytrzymalosc;
 			this.zloto = 500000;
+			this.Zycie = życie;
 			//string nazwa,int ilosc, int cena, int wymaganyLVL, string sciezkaIkony
-		   
+
 			Ekwipunek.Add(new Hełm("Bylejaka Czapka", 1, 0, 0, "ms-appx:///Assets//NPCimages//helm.png"));
 			Ekwipunek.Add(new Zbroja("Bylejaka Zbroja", 1, 0, 0, "ms-appx:///Assets//NPCimages//zbroja.png"));
 			Ekwipunek.Add(new Tarcza("Bylejaka Tarcza", 1, 0, 0, "ms-appx:///Assets//NPCimages//tarcza.png"));
