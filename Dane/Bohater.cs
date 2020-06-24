@@ -197,7 +197,7 @@ namespace RPG.Dane
 
         public void zdejmijPrzedmiot(Przedmiot przedmiot)
         {
-            string obraz = "ms-appx:///Assets//plus.png"; //SEBA TU DAJ ITEM 100% PRZEZROCZYSTY
+            string obraz = "ms-appx:///Assets//przezroczysty.png"; //SEBA TU DAJ ITEM 100% PRZEZROCZYSTY
             if (przedmiot is Hełm)
             {
                 if (Helm != null)

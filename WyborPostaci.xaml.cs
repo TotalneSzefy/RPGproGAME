@@ -62,7 +62,7 @@ namespace RPG
             if (!String.IsNullOrEmpty(NazwaPostaci_TB.Text))
             {
                 string imie = NazwaPostaci_TB.Text;
-                Bohater klasa = new Bohater(imie, "ms-appx:///Assets//wojownik.jpg", 1, 100, 7, 4, 4, 5);
+                Bohater klasa = new Bohater(imie, "ms-appx:///Assets///Postacie/wojownik.png", 1, 100, 7, 4, 4, 5);
                 otworzScanaRozgrywka(klasa);
             }
         }
@@ -72,7 +72,7 @@ namespace RPG
             if (!String.IsNullOrEmpty(NazwaPostaci_TB.Text))
             {
                 string imie = NazwaPostaci_TB.Text;
-                Bohater klasa = new Bohater(imie, "ms-appx:///Assets//Zwiadowca.jpg", 1, 100, 5, 5, 5, 5);
+                Bohater klasa = new Bohater(imie, "ms-appx:///Assets///Postacie/Zwiadowca.png", 1, 100, 5, 5, 5, 5);
                 otworzScanaRozgrywka(klasa);
             }
         }

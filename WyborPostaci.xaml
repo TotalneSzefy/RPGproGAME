@@ -33,15 +33,15 @@
        
 
         <Image x:Name="Karzel_Image" Grid.Row="1" HorizontalAlignment="Left" Height="auto" Width="auto"
-                Source="Assets//karzel_ikona.jpg" Stretch="Fill" Grid.Column="0" Margin="10,10,10,10">
+                Source="ms-appx:///Assets///Postacie/karzel_ikona.png" Stretch="Fill" Grid.Column="0" Margin="10,10,10,10">
         </Image>
 
         <Image  x:Name="Wojownik_Image" Grid.Row="2" HorizontalAlignment="Left" Height="auto" Width="auto"
-                Source="ms-appx:///Assets///Postacie/wojownik_ikona3.png" Stretch="Fill" Grid.Column="2" Margin="10,10,10,10">
+                Source="ms-appx:///Assets///Postacie/wojownik_ikona.png" Stretch="Fill" Grid.Column="2" Margin="10,10,10,10">
         </Image>
 
         <Image x:Name="Zwiadowca_Image" Grid.Row="3" HorizontalAlignment="Left" Height="auto" Width="auto"
-                 Source="Assets//zwiadowca_ikona.jpg" Stretch="Fill" Grid.Column="0" Margin="10,10,10,10">
+                 Source="ms-appx:///Assets///Postacie/zwiadowca_ikona.png" Stretch="Fill" Grid.Column="0" Margin="10,10,10,10">
         </Image>
 
         <Button Content="Karzel" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center"
