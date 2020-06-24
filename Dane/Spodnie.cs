@@ -8,6 +8,10 @@ namespace RPG.Dane
 {
     public class Spodnie : Przedmiot
     {
+        public Spodnie()
+        {
+        }
+
         public Spodnie(string nazwa, int ilosc, int cena, int wymaganyLVL, string sciezkaIkony) : base(nazwa, ilosc, cena, wymaganyLVL, sciezkaIkony)
         {
 

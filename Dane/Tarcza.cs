@@ -8,6 +8,10 @@ namespace RPG.Dane
 {
     public class Tarcza : Przedmiot
     {
+        public Tarcza()
+        {
+        }
+
         public Tarcza(string nazwa, int ilosc, int cena, int wymaganyLVL, string sciezkaIkony) : base(nazwa, ilosc, cena, wymaganyLVL, sciezkaIkony)
         {
 

@@ -68,7 +68,7 @@ namespace RPG.Dane
         public double ObrazeniaMnoznik { get => obrazeniaMoznik; set => obrazeniaMoznik = value; }
         public double ObronaMnoznik { get => obronaMoznik; set => obronaMoznik = value; }
         public double STrafieniaMnozniks { get => sTrafieniaMozniks; set => sTrafieniaMozniks = value; }
-        public double SUnikMoznik { get => sUnikMoznik; set => sUnikMoznik = value; }
+        public double SUnikMnoznik { get => sUnikMoznik; set => sUnikMoznik = value; }
 
         public Przedmiot(string nazwa, int ilosc, int cena, int wymaganyLVL, string sciezkaIkony)
         {
@@ -79,6 +79,23 @@ namespace RPG.Dane
             SciezkaIkony = sciezkaIkony;
             Zalozony = false;
 
+            ObrazeniaBonus = 5;
+            ObronaBonus = 5;
+            STrafieniaBonus = 5;
+            SUnikBonus = 5;
+            ObrazeniaMnoznik = 0;
+            ObronaMnoznik = 0;
+            STrafieniaMnozniks = 0;
+            SUnikMnoznik = 0;
+        }
+
+        public Przedmiot()
+        {
+
+        }
+
+        public void ZerujStaty()
+        {
             ObrazeniaBonus = 0;
             ObronaBonus = 0;
             STrafieniaBonus = 0;
@@ -86,12 +103,7 @@ namespace RPG.Dane
             ObrazeniaMnoznik = 0;
             ObronaMnoznik = 0;
             STrafieniaMnozniks = 0;
-            SUnikMoznik = 0;
-        }
-
-        public Przedmiot()
-        {
-
+            SUnikMnoznik = 0;
         }
 
     }
