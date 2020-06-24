@@ -1,5 +1,7 @@
-﻿using System;
+﻿using RPG.Dane;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -22,9 +24,19 @@ namespace RPG
     /// </summary>
     public sealed partial class Katakumby : Page
     {
+
+        public ObservableCollection<Użytkowe> sklepPoty = new ObservableCollection<Użytkowe>();
+
+        public ObservableCollection<Użytkowe> posiadanePoty = new ObservableCollection<Użytkowe>();
+
         public Katakumby()
         {
             this.InitializeComponent();
+
+            sklepPoty.Add(new Użytkowe("Mikstura Życia", 1, 500, 1, "ms-appx:///Assets//Potki//potka1.png", rodzajPoty.Zycia));
+            sklepPoty.Add(new Użytkowe("Mikstura Nieśmiertelności", 1, 500, 1, "ms-appx:///Assets//Potki//potka2.png", rodzajPoty.Niesmiertelnosci));
+            sklepPoty.Add(new Użytkowe("Mikstura Siły", 1, 500, 1, "ms-appx:///Assets//Potki//potka3.png", rodzajPoty.Sily));
+            sklepPoty.Add(new Użytkowe("Mikstura Trafienia", 1, 500, 1, "ms-appx:///Assets//Potki//potka4.png", rodzajPoty.Trafienia));
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -37,7 +49,20 @@ namespace RPG
 
         private void walcz_BTN_Click(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(Walka));
+            this.Frame.Navigate(typeof(Walka), posiadanePoty);
+        }
+
+        private void kup_BTN_Click(object sender, RoutedEventArgs e)
+        {
+            Użytkowe potka = (Użytkowe)sklepPotekListBox.SelectedItem;
+            if (potka != null)
+            {
+                if (Bohater.Instancja.Zloto >= potka.Cena)
+                {
+                    Bohater.Instancja.Zloto -= potka.Cena;
+                    posiadanePoty.Add(potka);
+                }
+            }
         }
     }
 }

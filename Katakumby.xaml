@@ -36,7 +36,7 @@
         <Button HorizontalAlignment="Center" VerticalAlignment="Center" Content="Wróć" Click="Button_Click" Grid.Column="1"/>
         <Button HorizontalAlignment="Center" VerticalAlignment="Center" Content="Walcz!" x:Name="walcz_BTN" Grid.Column="2" FontSize="150" Click="walcz_BTN_Click"/>
      <!--przycisk kupowania, po kliknieciu itemek zaznaczony w listboxie leci do ekwipunku, ekwipunek bedzie sie wyswietlał w trakcie walki i mozna bedzie wtedy skorzystać-->
-        <Button HorizontalAlignment="Center" VerticalAlignment="Center" Content="Kup" x:Name="kup_BTN" Grid.Column="3"/>
+        <Button HorizontalAlignment="Center" VerticalAlignment="Center" Content="Kup" x:Name="kup_BTN" Grid.Column="3" Click="kup_BTN_Click"/>
 
 
         <!--TO JEST LISTBOX DO KUPOWANIA POTEK PRZED WALKĄ, OBRAZKI POTEK ZNAJDUJĄ SIĘ W: ASSETS -> POTKI.

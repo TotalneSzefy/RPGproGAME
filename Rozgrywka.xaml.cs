@@ -27,7 +27,7 @@ namespace RPG
             string imie = Bohater.Instancja.Imie;
             string sciezkaIkony = Bohater.Instancja.SciezkaIkony;
             int poziom = Bohater.Instancja.Poziom;
-            int zycie = Bohater.Instancja.Życie;
+            int zycie = Bohater.Instancja.Zycie;
             int siła = Bohater.Instancja.Sila;
             int inteligencja = Bohater.Instancja.Inteligencja;
             int zrecznosc = Bohater.Instancja.Zrecznosc;
