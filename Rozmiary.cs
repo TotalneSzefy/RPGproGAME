@@ -13,6 +13,7 @@ namespace RPG
         private int statyFontSize1;
         private int przyciskiFontSize1;
         private string tlo;
+        private int numerRundy;
 
 
         public Rozmiary()
@@ -20,6 +21,18 @@ namespace RPG
             StatyFontSize1 = 10;
             PrzyciskiFontSize1 = 10;
         }
+
+        public int NumerRundy
+        {
+            get => numerRundy;
+
+            set
+            {
+                numerRundy = value;
+                PropertyChanged(this, new PropertyChangedEventArgs("NumerRundy"));
+            }
+        }
+
         public string Tlo
         {
             get => tlo;

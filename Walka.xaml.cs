@@ -29,7 +29,8 @@ namespace RPG
         Random rand = new Random();
 
         Potwór potwor;
-        int nr_rundy = 1;
+        
+        
         public Walka()
         {
             potwor = new Potwór("Murlok", "ms-appx:///Assets//Potwory//murlok.png", 1, 100);
@@ -38,6 +39,7 @@ namespace RPG
             int losowe = rand.Next(1, 5);
             ustawienia.Tlo = "Assets//"+losowe+".png";
             Bohater.Instancja.Zycie = 100;
+            ustawienia.NumerRundy = 1;
             
         }
 
@@ -95,7 +97,7 @@ namespace RPG
 
             }
             znajdzPotwora();
-            nr_rundy++;
+            ustawienia.NumerRundy++;
         }
     }
 
