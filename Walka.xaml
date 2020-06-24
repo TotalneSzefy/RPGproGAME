@@ -12,14 +12,13 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="3*"/>
-            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="1,5*"/>
             <ColumnDefinition Width="3*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
-            
             <RowDefinition Height="5*"/>
             <RowDefinition Height="3*"/>
             <RowDefinition Height="*"/>
@@ -34,9 +33,65 @@
         <!--tu bedzie potwór, potwór bedzie losowany ze zbioru mobow wiec ta ścieżka też bedize losowa,
         zrobie folder gdzie beda ikony mobow i po prostu beda nazwane tak jak identyfikator moba czy cos, sie zoabczy-->
         <Image x:Name="potwor" Source = "ms-appx:///Assets//Potwory//murlok.png" Grid.Row="1" Grid.Column="3"/>
-        
-        
 
+        <!--Pole na statystyki postaci/ hp wartosc ataku-->
+        <Grid Grid.Column="1" Grid.Row="2" Background="#33000000">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="2*"/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" Grid.Column="0" Text="Punkty życia: " FontSize="40" Foreground="#FFE0D1D1"/>
+            <TextBlock Grid.Row="1" Grid.Column="0" Text="Wartosc ataku: " FontSize="40" Foreground="#FFE0D1D1"/>
+            <TextBlock x:Name="hpPostac_BTN" Grid.Row="0" Grid.Column="1" Text="0" FontSize="40" Foreground="#FFE0D1D1"/>
+            <TextBlock x:Name="atakPostac_TB" Grid.Row="1" Grid.Column="1" Text="0" FontSize="40" Foreground="#FFE0D1D1"/>
+        </Grid>
+        
+       
+        <!--Pole na statystyki moba/ hp wartosc ataku-->
+        <Grid Grid.Column="3" Grid.Row="2" Background="#33000000">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="2*"/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" Grid.Column="0" Text="Punkty życia: " FontSize="40" Foreground="#FFE0D1D1"/>
+            <TextBlock Grid.Row="1" Grid.Column="0" Text="Wartosc ataku: " FontSize="40" Foreground="#FFE0D1D1"/>
+            <TextBlock x:Name="hpMob_BTN" Grid.Row="0" Grid.Column="1" Text="0" FontSize="40" Foreground="#FFE0D1D1"/>
+            <TextBlock x:Name="atakMob_TB" Grid.Row="1" Grid.Column="1" Text="0" FontSize="40" Foreground="#FFE0D1D1"/>
+        </Grid>
 
+        <!--listbox na potki ktore masz do użycia-->
+        <ListBox Margin="5" Grid.Column="0" Grid.Row="1" Name="sklepPotekListBox" Background="#59000000">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Height="100">
+                        <RelativePanel>
+                            <Image x:Name="Ikona" Source="{Binding SciezkaIkony}" RelativePanel.RightOf="NazwaPrzedmiotu" Height="100" Width="100" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="45,0,0,0"/>
+                        </RelativePanel>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <!--przyciski do walki-->
+        <RelativePanel Grid.Row="1" Grid.Column="2" Background="#33000000" Margin="5" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button x:Name="atak_BTN" Content="Zadaj Cios!" FontSize="25" HorizontalAlignment="Center" VerticalAlignment="Center" Width="170" Foreground="#FFE0D1D1"/>
+            <Button x:Name="obrona_BTN" Content="Broń się!" FontSize="25" RelativePanel.Below="atak_BTN" HorizontalAlignment="Center" VerticalAlignment="Center" Width="170" Foreground="#FFE0D1D1"/>
+            <Button x:Name="potka_mala_Btn" Content="Mała potka" FontSize="25" RelativePanel.Below="obrona_BTN" HorizontalAlignment="Center" VerticalAlignment="Center" Width="170" Foreground="#FFE0D1D1"/>
+            <Button x:Name="potka_srednia_Btn" Content="Średnia potka" FontSize="25" RelativePanel.Below="potka_mala_Btn" HorizontalAlignment="Center" VerticalAlignment="Center" Width="170" Foreground="#FFE0D1D1"/>
+            <Button x:Name="potka_duza_Btn" Content="Duża potka" FontSize="25" RelativePanel.Below="potka_srednia_Btn" HorizontalAlignment="Center" VerticalAlignment="Center" Width="170" Foreground="#FFE0D1D1"/>
+        </RelativePanel>
+
+        <!--napis na górze-->
+        <TextBlock x:Name="Runda_TB" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" Text="Runda 1" FontSize="100" Foreground="#FFFFF85B"/>
     </Grid>
 </Page>

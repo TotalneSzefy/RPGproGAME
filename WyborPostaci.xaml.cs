@@ -6,6 +6,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Storage;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -46,6 +47,11 @@ namespace RPG
             this.Frame.Navigate(typeof(Rozgrywka));
         }
 
+
+
+        //dorba w kazdej postaci trzeba tutaj zapisywać ją do pliku tekstowego, np o nazwie takiej jak nazywać się bedzie postać, zapisuejmy staty w tym momencie i plik bedzie np: nickStaty
+        //w rozgrywce zrobimy plik tekstowy  nickEkwipunek i wtedy wszystko bedzie proste do zrobienia a nawet w przyszłosci bedzie sie dalo saveovac wiecej postaci xD
+        #region Wybor postaci click
         private void Karzel_Clik(object sender, RoutedEventArgs e)
         {
             if (!String.IsNullOrEmpty(NazwaPostaci_TB.Text))
@@ -57,13 +63,22 @@ namespace RPG
             
         }
 
-        private void Wojownik_Clik(object sender, RoutedEventArgs e)
+        private async void Wojownik_Clik(object sender, RoutedEventArgs e)
         {
             if (!String.IsNullOrEmpty(NazwaPostaci_TB.Text))
             {
                 string imie = NazwaPostaci_TB.Text;
                 Bohater klasa = new Bohater(imie, "ms-appx:///Assets///Postacie/wojownik.png", 1, 100, 7, 4, 4, 5);
                 otworzScanaRozgrywka(klasa);
+
+                //wlasciwie taka linijka w każdym etapie gry służyłaby do zapisania postaci
+                string zapis = imie + ",ms-appx:///Assets///Postacie/wojownik.png" + ",1,100,7,4,4,5";
+
+                //BETA ZAPISYWANIE STATOW
+                var local = ApplicationData.Current.LocalFolder;
+                
+                StorageFile file = await local.CreateFileAsync(imie + "Staty");
+                await FileIO.WriteTextAsync(file, zapis);
             }
         }
 
@@ -76,7 +91,7 @@ namespace RPG
                 otworzScanaRozgrywka(klasa);
             }
         }
-
+        #endregion
         void otworzScanaRozgrywka(Bohater klasa)
         {
             this.Frame.Navigate(typeof(Rozgrywka),klasa);

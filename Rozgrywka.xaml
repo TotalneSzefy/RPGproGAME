@@ -16,7 +16,7 @@
             <ColumnDefinition Width="0.9*"/>
             <ColumnDefinition Width="4.5*"/>
             <ColumnDefinition Width="0.7*"/>
-            
+
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="1.5*"/>
@@ -31,7 +31,7 @@
 
         <NavigationView x:Name="PanelNawigacyjny" OpenPaneLength="250" PaneDisplayMode="Top"  CompactModeThresholdWidth="600" ExpandedModeThresholdWidth="1200" Grid.ColumnSpan="6" Height="130" VerticalAlignment="Bottom">
             <NavigationView.MenuItems>
-                
+
                 <NavigationViewItem x:Name="Karczma" Tapped="Karczma_Tapped">
                     <StackPanel>
                         <RelativePanel>
@@ -87,7 +87,7 @@
         <StackPanel Grid.Column="3" Grid.Row="3" Background="#59000000" BorderBrush="Black" BorderThickness="2" Margin="10,10,10,10">
             <Image x:Name="buty" Source="{x:Bind bohater.Buty.SciezkaIkony, Mode=OneWay}" Stretch="Fill"/>
         </StackPanel>
-        
+
         <StackPanel Grid.Column="2" Grid.Row="1" Grid.RowSpan="3" Background="#59000000" BorderBrush="Black" BorderThickness="2" Margin="10,10,10,10">
             <Image x:Name="ObrazPostaci" RelativePanel.RightOf="helm"  Source="{x:Bind bohater.SciezkaIkony}"  />
 
@@ -171,7 +171,7 @@
                 <TextBlock x:Name="Obrazenia" Text="Obrazenia:" FontSize="{x:Bind rozmiary.StatyFontSize1, Mode=OneWay}" Grid.Row="1" Grid.Column="3" Foreground="#FFFFF85B" />
                 <TextBlock x:Name="Obrona" Text="Obrona:" FontSize="{x:Bind rozmiary.StatyFontSize1, Mode=OneWay}"  RelativePanel.Below="Sila" Grid.Row="2" Grid.Column="3" Foreground="#FFFFF85B"/>
                 <TextBlock x:Name="SzansaTrafienia" Text="Szansa trafienia:" FontSize="{x:Bind rozmiary.StatyFontSize1, Mode=OneWay}"  RelativePanel.Below="Int" Grid.Row="3" Grid.Column="3" Foreground="#FFFFF85B"/>
-                <TextBlock x:Name="SzansaNaUnik" Text="Szansa na unik:" FontSize="{x:Bind rozmiary.StatyFontSize1, Mode=OneWay}"  RelativePanel.Below="Int" Grid.Row="4" Grid.Column="3" Foreground="#FFFFF85B"/>
+                <TextBlock x:Name="SzansaNaUnik" Text="Szansa na unik:" FontSize="{x:Bind rozmiary.StatyFontSize1, Mode=OneWay}"  RelativePanel.Below="Int" Grid.Row="4" Grid.Column="3" Foreground="#FFFFF85B" Margin="0,9,0,0" VerticalAlignment="Top"/>
 
                 <TextBlock x:Name="AtakWartosc" Text="{x:Bind bohater.Obrazenia}" FontSize="{x:Bind rozmiary.StatyFontSize1, Mode=OneWay}"  Grid.Row="1" Grid.Column="4" Foreground="#FFFFDB00"/>
                 <TextBlock x:Name="ObronaWartosc" Text="{x:Bind bohater.Obrona}" FontSize="{x:Bind rozmiary.StatyFontSize1, Mode=OneWay}"  RelativePanel.Below="Sila" Grid.Row="2" Grid.Column="4" Foreground="#FFFFDB00"/>
@@ -180,8 +180,8 @@
 
             </Grid>
         </StackPanel>
-        
-        
+
+
         <ListBox Margin="20,10,20,10" Grid.Column="4" Grid.Row="1" Grid.RowSpan="3" ItemsSource="{x:Bind bohater.Ekwipunek}"   Name="Ekwipunek_ListBox" Background="#59000000" DoubleTapped="Ekwipunek_DoubleTapped" SelectionChanged="Ekwipunek_ListBox_SelectionChanged">
             <ListBox.ItemTemplate>
                 <DataTemplate>
