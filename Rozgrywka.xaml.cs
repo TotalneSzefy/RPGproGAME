@@ -47,7 +47,8 @@ namespace RPG
 
                 foreach (Przedmiot item in Bohater.Instancja.Ekwipunek)
                 {
-                    await FileIO.AppendTextAsync(file2, item.ToString());
+                    string przedmiot = item.Nazwa + "," + item.Ilosc + "," + item.Cena + "," + item.WymaganyLVL + "," + item.SciezkaIkony + "," + item.Zalozony + "," + item.ObrazeniaBonus + "," + item.ObronaBonus + "," + item.STrafieniaBonus + "," + item.SUnikBonus + "," + item.ObrazeniaMnoznik + "," + item.ObronaMnoznik + "," + item.STrafieniaMnozniks + "," + item.SUnikMnoznik + "\n";
+                    await FileIO.AppendTextAsync(file2, przedmiot);
                 }
             }
             catch //jak istnieje to sobie nadpisuje
@@ -63,7 +64,7 @@ namespace RPG
 
                 foreach (Przedmiot item in Bohater.Instancja.Ekwipunek)
                 {
-                    string przedmiot = item.Nazwa +","+ item.Cena + item.SciezkaIkony + "\n";
+                    string przedmiot = item.Nazwa +","+ item.Ilosc + "," + item.Cena + "," + item.WymaganyLVL + "," + item.SciezkaIkony + "," + item.Zalozony + "," +item.ObrazeniaBonus+ "," +item.ObronaBonus + "," +item.STrafieniaBonus + "," +item.SUnikBonus + "," +item.ObrazeniaMnoznik + "," +item.ObronaMnoznik + "," +item.STrafieniaMnozniks + "," +item.SUnikMnoznik+ "\n";
                     await FileIO.AppendTextAsync(newFile2, przedmiot);
                 }
             }

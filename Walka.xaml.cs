@@ -31,7 +31,7 @@ namespace RPG
         Random rand = new Random();
 
         Potwór potwor;
-        int nr_rundy = 1;
+        
 
         public ObservableCollection<Użytkowe> posiadanePoty = new ObservableCollection<Użytkowe>();
         WalkaClass walkaClass = new WalkaClass();
@@ -44,6 +44,7 @@ namespace RPG
             int losowe = rand.Next(1, 5);
             ustawienia.Tlo = "Assets//"+losowe+".png";
             Bohater.Instancja.Zycie = 100;
+            ustawienia.NumerRundy = 1;
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -105,7 +106,7 @@ namespace RPG
 
             }
             znajdzPotwora();
-            nr_rundy++;
+            ustawienia.NumerRundy++;
         }
         private async void PotekListBox_DoubleTapped(object sender, DoubleTappedRoutedEventArgs e)
         {

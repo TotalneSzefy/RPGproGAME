@@ -83,13 +83,26 @@ namespace RPG
         {
             var local = ApplicationData.Current.LocalFolder;
             StorageFile file = await local.GetFileAsync("SBXStaty");
+            StorageFile file2 = await local.GetFileAsync("SBXEkwipunek");
+
             string str = await FileIO.ReadTextAsync(file);
+            string str2 = await FileIO.ReadTextAsync(file2);
 
-            string[] postac = str.Split(",");
+            string[] postacStaty = str.Split(",");
+            string[] postacEQ = str2.Split("\n");
+           // string[] przedmiot = postacEQ[1].Split(' ');
 
-            Bohater.CreateStaticInstance(postac[0], postac[1], int.Parse(postac[2]), int.Parse(postac[3]), int.Parse(postac[4]), int.Parse(postac[5]), int.Parse(postac[6]), int.Parse(postac[7]));
-            
-            Bohater.Instancja.Zloto = int.Parse(postac[8]);
+            Bohater.CreateStaticInstance(postacStaty[0], postacStaty[1], int.Parse(postacStaty[2]), int.Parse(postacStaty[3]), int.Parse(postacStaty[4]), int.Parse(postacStaty[5]), int.Parse(postacStaty[6]), int.Parse(postacStaty[7]));
+            Bohater.Instancja.Zloto = int.Parse(postacStaty[8]);
+
+          /*  for(int i = 0; i < postacEQ.Length; i++)
+            {
+                string[] przedmiot = postacEQ[i].Split(' ');
+                Bohater.Instancja.Ekwipunek.Add(postacEQ[0], postacEQ[0], postacEQ[0], postacEQ[0], postacEQ[0]);
+
+            }*/
+
+
 
             this.Frame.Navigate(typeof(Rozgrywka));
         }

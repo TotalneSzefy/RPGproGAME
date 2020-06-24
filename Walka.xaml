@@ -90,6 +90,10 @@
         </RelativePanel>
 
         <!--napis na górze-->
-        <TextBlock x:Name="Runda_TB" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" Text="Runda 1" FontSize="100" Foreground="#FFFFF85B"/>
+        <RelativePanel Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock x:Name="Runda_TB" Text="{x:Bind ustawienia.NumerRundy, Mode=OneWay}"   FontSize="100" Foreground="#FFFFF85B" RelativePanel.RightOf="RundaBlock" Margin="20,0,0,0"/>
+            <TextBlock x:Name="RundaBlock" Text="Runda: " FontSize="100" Foreground="#FFFFF85B"/>
+
+        </RelativePanel>
     </Grid>
 </Page>

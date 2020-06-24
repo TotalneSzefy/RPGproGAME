@@ -22,7 +22,7 @@
 
         <Image x:Name="tlo" Source="Assets//PanelStartowy_Tło.jpg" Stretch="Fill" Grid.RowSpan="5" />
 
-        <TextBlock x:Name="NazwaGry" Grid.Row="0"  Text="Muj   RPG" FontSize="80"
+        <TextBlock x:Name="NazwaGry" Grid.Row="0"  Text="Gra bez nazwy" FontSize="80"
                    HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,0,0,0" FontFamily="Assets\czcionka.ttf#Breathe Fire II" />
 
         <Button x:Name="NowaGra_Btn" Grid.Row="1" Content="Nowa gra" Click="Button_Click" />
