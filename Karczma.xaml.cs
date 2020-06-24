@@ -43,7 +43,7 @@ namespace RPG
             sklepMiecze.Add(new Broń("Katana", 1, 3500, 15, "ms-appx:///Assets//Miecze//katana.png"));
             sklepMiecze.Add(new Broń("Szabla", 1, 4500, 20, "ms-appx:///Assets//Miecze//szabla.png"));
             #endregion
-
+            
             #region Tarcze
             sklepTarcze.Add(new Tarcza("Drewniana tarcza", 1, 300, 1, "ms-appx:///Assets//Tarcze//drewnianaTarcza.png"));
             sklepTarcze.Add(new Tarcza("Tarcza nowicjusza", 1, 1100, 6, "ms-appx:///Assets//Tarcze//tarczaNowicjusza.png"));

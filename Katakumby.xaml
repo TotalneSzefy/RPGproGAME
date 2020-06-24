@@ -50,7 +50,7 @@
                             <!--<TextBlock Width="280" Foreground="AliceBlue" x:Name="NazwaPrzedmiotu" Text="{Binding Nazwa}" FontSize="32" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             <TextBlock Foreground="AliceBlue" x:Name="WymaganyPoziom" Text="{Binding WymaganyLVL}" RelativePanel.RightOf="Ikona" Margin="45,0,0,0" FontSize="32" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             <TextBlock Foreground="AliceBlue" x:Name="Cena" Text="{Binding Cena}" RelativePanel.RightOf="WymaganyPoziom" Margin="45,0,0,0" FontSize="32" HorizontalAlignment="Center" VerticalAlignment="Center"/>-->
-                            <Image x:Name="Ikona" Source="{Binding SciezkaIkony}" RelativePanel.RightOf="NazwaPrzedmiotu" Height="100" Width="100" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="45,0,0,0"/>
+                            <Image x:Name="Ikona" Source="{Binding SciezkaIkony}" Height="100" Width="100" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="45,0,0,0"/>
                         </RelativePanel>
                     </StackPanel>
                 </DataTemplate>

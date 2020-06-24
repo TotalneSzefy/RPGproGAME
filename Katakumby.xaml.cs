@@ -25,18 +25,20 @@ namespace RPG
     public sealed partial class Katakumby : Page
     {
 
-        public ObservableCollection<Użytkowe> sklepPoty = new ObservableCollection<Użytkowe>();
-
-        public ObservableCollection<Użytkowe> posiadanePoty = new ObservableCollection<Użytkowe>();
+        public ObservableCollection<Przedmiot> sklepPoty = new ObservableCollection<Przedmiot>();
+        public ObservableCollection<Przedmiot> posiadanePoty = new ObservableCollection<Przedmiot>();
 
         public Katakumby()
         {
-            this.InitializeComponent();
-
             sklepPoty.Add(new Użytkowe("Mikstura Życia", 1, 500, 1, "ms-appx:///Assets//Potki//potka1.png", rodzajPoty.Zycia));
             sklepPoty.Add(new Użytkowe("Mikstura Nieśmiertelności", 1, 500, 1, "ms-appx:///Assets//Potki//potka2.png", rodzajPoty.Niesmiertelnosci));
             sklepPoty.Add(new Użytkowe("Mikstura Siły", 1, 500, 1, "ms-appx:///Assets//Potki//potka3.png", rodzajPoty.Sily));
             sklepPoty.Add(new Użytkowe("Mikstura Trafienia", 1, 500, 1, "ms-appx:///Assets//Potki//potka4.png", rodzajPoty.Trafienia));
+
+            this.InitializeComponent();
+
+            sklepPotekListBox.ItemsSource = sklepPoty;
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
