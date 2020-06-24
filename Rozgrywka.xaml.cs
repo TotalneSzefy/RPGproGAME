@@ -31,23 +31,39 @@ namespace RPG
 
         private void zwiekszSila_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
         {
-            Bohater.Instancja.Sila++;
-            //Bohater.Ins.Sila++;
+            if (Bohater.Instancja.Zloto >= 100 * Bohater.Instancja.Sila)
+            {
+                Bohater.Instancja.Sila++;
+                Bohater.Instancja.Zloto -= 100 * Bohater.Instancja.Sila;
+            }
+            
         }
 
         private void zwiekszInt_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
         {
-            Bohater.Instancja.Inteligencja++;
+            if (Bohater.Instancja.Zloto >= 100 * Bohater.Instancja.Inteligencja)
+            {
+                Bohater.Instancja.Inteligencja++;
+                Bohater.Instancja.Zloto -= 100 * Bohater.Instancja.Inteligencja;
+            }
         }
 
         private void dodajZrecznosc_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
         {
-            Bohater.Instancja.Zrecznosc++;
+            if (Bohater.Instancja.Zloto >= 100 * Bohater.Instancja.Zrecznosc)
+            {
+                Bohater.Instancja.Zrecznosc++;
+                Bohater.Instancja.Zloto -= 100 * Bohater.Instancja.Zrecznosc;
+            }
         }
 
         private void dodajWytrzymalosc_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
         {
-            Bohater.Instancja.Wytrzymalosc++;
+            if (Bohater.Instancja.Zloto >= 100 * Bohater.Instancja.Wytrzymalosc)
+            {
+                Bohater.Instancja.Wytrzymalosc++;
+                Bohater.Instancja.Zloto -= 100 * Bohater.Instancja.Wytrzymalosc;
+            }
         }
 
         private void Ekwipunek_DoubleTapped(object sender, DoubleTappedRoutedEventArgs e)

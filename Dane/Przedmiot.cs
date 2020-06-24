@@ -15,11 +15,20 @@ namespace RPG.Dane
         private int wymaganyLVL;
         private string sciezkaIkony;
         private bool zalozony;
+        private string zalozonySTR;
+       
+
+        private double obrazeniaBonus;
+        private double obronaBonus;
+        private double sTrafieniaBonus;
+        private double sUnikBonus;
+
+        private double obrazeniaMoznik;
+        private double obronaMoznik;
+        private double sTrafieniaMozniks;
+        private double sUnikMoznik;
 
         public event PropertyChangedEventHandler PropertyChanged = delegate { };
-
-
-
         public string Nazwa { get => nazwa; set => nazwa = value; }
         public int Ilosc { get => ilosc; set => ilosc = value; }
         public int Cena { get => cena; set => cena = value; }
@@ -31,9 +40,35 @@ namespace RPG.Dane
             set
             {
                 zalozony = value;
+                if (zalozony)
+                {
+                    ZalozonySTR = "Założony";
+                }
+                else
+                {
+                    ZalozonySTR = "";
+                }
                 PropertyChanged(this, new PropertyChangedEventArgs("Zalozony"));
             }
         }
+
+        public string ZalozonySTR
+        {
+            get => zalozonySTR; set
+            {
+                zalozonySTR = value;
+                PropertyChanged(this, new PropertyChangedEventArgs("ZalozonySTR"));
+            }
+        }
+
+        public double ObrazeniaBonus { get => obrazeniaBonus; set => obrazeniaBonus = value; }
+        public double ObronaBonus { get => obronaBonus; set => obronaBonus = value; }
+        public double STrafieniaBonus { get => sTrafieniaBonus; set => sTrafieniaBonus = value; }
+        public double SUnikBonus { get => sUnikBonus; set => sUnikBonus = value; }
+        public double ObrazeniaMnoznik { get => obrazeniaMoznik; set => obrazeniaMoznik = value; }
+        public double ObronaMnoznik { get => obronaMoznik; set => obronaMoznik = value; }
+        public double STrafieniaMnozniks { get => sTrafieniaMozniks; set => sTrafieniaMozniks = value; }
+        public double SUnikMoznik { get => sUnikMoznik; set => sUnikMoznik = value; }
 
         public Przedmiot(string nazwa, int ilosc, int cena, int wymaganyLVL, string sciezkaIkony)
         {
@@ -43,7 +78,17 @@ namespace RPG.Dane
             WymaganyLVL = wymaganyLVL;
             SciezkaIkony = sciezkaIkony;
             Zalozony = false;
+
+            ObrazeniaBonus = 0;
+            ObronaBonus = 0;
+            STrafieniaBonus = 0;
+            SUnikBonus = 0;
+            ObrazeniaMnoznik = 0;
+            ObronaMnoznik = 0;
+            STrafieniaMnozniks = 0;
+            SUnikMoznik = 0;
         }
+
         public Przedmiot()
         {
 
