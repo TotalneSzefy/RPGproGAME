@@ -20,7 +20,7 @@
 
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="1.5*"/>
+            <RowDefinition Height="1.3*"/>
             <RowDefinition Height="2*"/>
             <RowDefinition Height="2*"/>
             <RowDefinition Height="2*"/>
@@ -61,7 +61,7 @@
                     <StackPanel>
                         <RelativePanel>
                             <Image x:Name="Wyjdz" Source="Assets\\karzel_ikona.jpg" Height="30" Width="30"/>
-                            <TextBlock Text="Zapisz i wyjdź" RelativePanel.RightOf="Wyjdz" FontSize="20" Margin="10,5,0,0"  />
+                            <TextBlock Text="Zapisz i wyjdź" RelativePanel.RightOf="Wyjdz" FontSize="20" Margin="10,5,0,0" SelectionChanged="TextBlock_SelectionChanged"  />
                         </RelativePanel>
                     </StackPanel>
                 </NavigationViewItem>
@@ -176,25 +176,30 @@
                 <TextBlock x:Name="Obrona" Text="Obrona:" FontSize="{x:Bind rozmiary.StatyFontSize1, Mode=OneWay}"  RelativePanel.Below="Sila" Grid.Row="2" Grid.Column="3" Foreground="#FFFFF85B"/>
                 <TextBlock x:Name="SzansaTrafienia" Text="Szansa trafienia:" FontSize="{x:Bind rozmiary.StatyFontSize1, Mode=OneWay}"  RelativePanel.Below="Int" Grid.Row="3" Grid.Column="3" Foreground="#FFFFF85B"/>
                 <TextBlock x:Name="SzansaNaUnik" Text="Szansa na unik:" FontSize="{x:Bind rozmiary.StatyFontSize1, Mode=OneWay}"  RelativePanel.Below="Int" Grid.Row="4" Grid.Column="3" Foreground="#FFFFF85B" Margin="0,9,0,0" VerticalAlignment="Top"/>
+                <TextBlock x:Name="poziomPostaci" Text="Poziom postaci: " FontSize="{x:Bind rozmiary.StatyFontSize1, Mode=OneWay}"  RelativePanel.Below="Int" Grid.Row="5" Grid.Column="3" Foreground="#FFFFF85B" Margin="0,9,0,0" VerticalAlignment="Top"/>
 
+                
                 <TextBlock x:Name="AtakWartosc" Text="{x:Bind Mode=OneWay, Path=Dane:Bohater.Instancja.Obrazenia}" FontSize="{x:Bind rozmiary.StatyFontSize1, Mode=OneWay}"  Grid.Row="1" Grid.Column="4" Foreground="#FFFFDB00"/>
                 <TextBlock x:Name="ObronaWartosc" Text="{x:Bind Mode=OneWay, Path=Dane:Bohater.Instancja.Obrona}" FontSize="{x:Bind rozmiary.StatyFontSize1, Mode=OneWay}"  RelativePanel.Below="Sila" Grid.Row="2" Grid.Column="4" Foreground="#FFFFDB00"/>
                 <TextBlock x:Name="SzansaTrafieniaWartosc" Text="{x:Bind Mode=OneWay, Path=Dane:Bohater.Instancja.SzansaTrafienia}" FontSize="{x:Bind rozmiary.StatyFontSize1, Mode=OneWay}"  RelativePanel.Below="Int" Grid.Row="3" Grid.Column="4" Foreground="#FFFFDB00"/>
                 <TextBlock x:Name="SzansaNaUnikWartosc" Text="{x:Bind Mode=OneWay, Path=Dane:Bohater.Instancja.SzansaUnik}" FontSize="{x:Bind rozmiary.StatyFontSize1, Mode=OneWay}"  RelativePanel.Below="Int" Grid.Row="4" Grid.Column="4" Foreground="#FFFFDB00"/>
+                <TextBlock x:Name="poziomPostaciWartosc" Text="{x:Bind Mode=OneWay, Path=Dane:Bohater.Instancja.Poziom}" FontSize="{x:Bind rozmiary.StatyFontSize1, Mode=OneWay}"  RelativePanel.Below="Int" Grid.Row="5" Grid.Column="4" Foreground="#FFFFDB00"/>
 
             </Grid>
         </StackPanel>
 
+        <Button x:Name="sell_BTN" Grid.Row="2" Grid.Column="5" Content="Sprzedaj" FontSize="30" Foreground="#FFB8A94F" Click="sell_BTN_Click"/>
 
         <ListBox Margin="20,10,20,10" Grid.Column="4" Grid.Row="1" Grid.RowSpan="3" ItemsSource="{x:Bind Mode=OneWay, Path=Dane:Bohater.Instancja.Ekwipunek}"   Name="Ekwipunek_ListBox" Background="#59000000" DoubleTapped="Ekwipunek_DoubleTapped">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel Height="50">
+                    <StackPanel Height="70">
                         <RelativePanel>
-                            <TextBlock x:Name="NazwaPrzedmiotu" Text="{Binding Nazwa}" FontSize="32"/>
+                            <TextBlock x:Name="NazwaPrzedmiotu" Text="{Binding Nazwa}" FontSize="32" Width="300"/>
                             <TextBlock x:Name="WymaganyPoziom" Text="{Binding WymaganyLVL}" RelativePanel.RightOf="NazwaPrzedmiotu" Margin="5,0,0,0" FontSize="32"/>
-                            <TextBlock x:Name="CzyZalozony" Text="{Binding ZalozonySTR}" RelativePanel.RightOf="Ikona" Margin="5,0,0,0" FontSize="32"/>
-                            <Image x:Name="Ikona" Source="{Binding SciezkaIkony}" RelativePanel.RightOf="WymaganyPoziom" Height="40" Width="40" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="20,0,0,0"/>
+                            <TextBlock x:Name="CzyZalozony" Text="{Binding ZalozonySTR}" RelativePanel.RightOf="Ikona" Margin="50,0,0,0" FontSize="32"/>
+                            <TextBlock x:Name="wartosc" Text="{Binding Cena}" RelativePanel.RightOf="CzyZalozony" Margin="50,0,0,0" FontSize="32"/>
+                            <Image x:Name="Ikona" Source="{Binding SciezkaIkony}" RelativePanel.RightOf="WymaganyPoziom" Height="70" Width="70" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="50,0,0,0"/>
                         </RelativePanel>
                     </StackPanel>
                 </DataTemplate>

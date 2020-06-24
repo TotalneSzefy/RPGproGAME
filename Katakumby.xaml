@@ -5,6 +5,7 @@
     xmlns:local="using:RPG"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:Dane="using:RPG.Dane"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
@@ -26,7 +27,11 @@
         </Grid.RowDefinitions>
         <Image Source="Assets//katakumby.jpg" Stretch="Fill" Grid.ColumnSpan="6" Grid.RowSpan="6" />
 
-        <TextBlock x:Name="zloto_TB" Text="Złoto: kurwa milion" Foreground="#FFFFF85B" Grid.Row="1" Grid.Column="2" FontSize="50"/>
+        <RelativePanel Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock x:Name="zloto_TB" Text="Złoto: " FontSize="50" Foreground="#FFFFF85B"/>
+            <TextBlock x:Name="zlotoWartosc_TB" Text="{x:Bind Mode=OneWay, Path=Dane:Bohater.Instancja.Zloto}" Foreground="#FFFFF85B"  FontSize="50" RelativePanel.RightOf="zloto_TB" Margin="20,0,0,0"/>
+
+        </RelativePanel>
 
         <Button HorizontalAlignment="Center" VerticalAlignment="Center" Content="Wróć" Click="Button_Click" Grid.Column="1"/>
         <Button HorizontalAlignment="Center" VerticalAlignment="Center" Content="Walcz!" x:Name="walcz_BTN" Grid.Column="2" FontSize="150" Click="walcz_BTN_Click"/>

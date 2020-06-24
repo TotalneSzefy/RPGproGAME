@@ -32,7 +32,7 @@
                 Margin="20,20,20,20" Content="Wroc" Background="#59000000" Tapped="wroc_Btn_Tapped" Foreground="#FF615B5B" Width="300"/>
         
         <Button x:Name="kup_Btn" HorizontalAlignment="Right" Grid.Row="0" Grid.Column="4" VerticalAlignment="Top"
-                Margin="20,150,20,20" Content="Kup" Background="#59000000"  Foreground="#FF615B5B" Width="300"/>
+                Margin="20,150,20,20" Content="Kup" Background="#59000000"  Foreground="#FF615B5B" Width="300" Click="kup_Btn_Click"/>
       
         
         <StackPanel Grid.Row="1" Grid.Column="0" Background="#66000000" Margin="20,20,20,20" CornerRadius="30" BorderThickness="6" BorderBrush="Black"/>

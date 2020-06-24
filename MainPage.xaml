@@ -26,7 +26,7 @@
                    HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,0,0,0" FontFamily="Assets\czcionka.ttf#Breathe Fire II" />
 
         <Button x:Name="NowaGra_Btn" Grid.Row="1" Content="Nowa gra" Click="Button_Click" />
-        <Button x:Name="Wznow_Btn" Grid.Row="2" Content="Wznów"/>
+        <Button x:Name="Wznow_Btn" Grid.Row="2" Content="Wznów" Click="Wznow_Btn_Click"/>
         <Button x:Name="Zakoncz_Btn" Grid.Row="3" Content="Zakoncz gre" Click="Zakoncz_BTN_Click"/>
         <TextBlock Text="By SBX and JohnyTea" Grid.Row="4" HorizontalAlignment="Right" FontSize="45" VerticalAlignment="Bottom"
                    FontFamily="Assets\czcionka.ttf#Breathe Fire II" />

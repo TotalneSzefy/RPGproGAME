@@ -144,7 +144,8 @@ namespace RPG.Dane
             this.Inteligencja = inteligencja;
             this.Zrecznosc = zrecznosc;
             this.Wytrzymalosc = wytrzymalosc;
-            this.zloto = 5000;
+            this.zloto = 50000;
+            this.Poziom = 35;
             //string nazwa,int ilosc, int cena, int wymaganyLVL, string sciezkaIkony
            
             Ekwipunek.Add(new Hełm("Bylejaka Czapka", 1, 0, 0, "ms-appx:///Assets//NPCimages//helm.png"));

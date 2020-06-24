@@ -24,7 +24,7 @@ namespace RPG
     /// </summary>
     public sealed partial class Karczma : Page
     {
-        
+
         public ObservableCollection<Przedmiot> sklepMiecze = new ObservableCollection<Przedmiot>();
         public ObservableCollection<Przedmiot> sklepHelmy = new ObservableCollection<Przedmiot>();
         public ObservableCollection<Przedmiot> sklepZbroje = new ObservableCollection<Przedmiot>();
@@ -123,5 +123,66 @@ namespace RPG
         {
             sklepListBox.ItemsSource = sklepTarcze;
         }
+
+        private void kup_Btn_Click(object sender, RoutedEventArgs e)
+        {
+            int wybrany = sklepListBox.SelectedIndex;
+
+            if (sklepListBox.ItemsSource == sklepMiecze)
+            {
+                if(Bohater.Instancja.Ekwipunek.Contains(sklepMiecze.ElementAt(wybrany)) == false)
+                {
+                    if (Bohater.Instancja.Zloto >= sklepMiecze.ElementAt(wybrany).Cena)
+                    {
+                        Bohater.Instancja.Ekwipunek.Add(sklepMiecze.ElementAt(wybrany));
+                        Bohater.Instancja.Zloto -= sklepMiecze.ElementAt(wybrany).Cena;
+                    }
+                }
+            }
+            else if (sklepListBox.ItemsSource == sklepHelmy)
+            {
+                if (Bohater.Instancja.Zloto >= sklepHelmy.ElementAt(wybrany).Cena && Bohater.Instancja.Ekwipunek.Contains(sklepHelmy.ElementAt(wybrany)) == false)
+                {
+                    Bohater.Instancja.Ekwipunek.Add(sklepHelmy.ElementAt(wybrany));
+                    Bohater.Instancja.Zloto -= sklepHelmy.ElementAt(wybrany).Cena;
+                }
+            }
+
+            else if (sklepListBox.ItemsSource == sklepZbroje)
+            {
+                if (Bohater.Instancja.Zloto >= sklepZbroje.ElementAt(wybrany).Cena && Bohater.Instancja.Ekwipunek.Contains(sklepZbroje.ElementAt(wybrany)) == false)
+                {
+                    Bohater.Instancja.Ekwipunek.Add(sklepZbroje.ElementAt(wybrany));
+                    Bohater.Instancja.Zloto -= sklepZbroje.ElementAt(wybrany).Cena;
+                }
+            }
+
+            else if (sklepListBox.ItemsSource == sklepSpodnie)
+            {
+                if (Bohater.Instancja.Zloto >= sklepSpodnie.ElementAt(wybrany).Cena && Bohater.Instancja.Ekwipunek.Contains(sklepSpodnie.ElementAt(wybrany)) == false)
+                {
+                    Bohater.Instancja.Ekwipunek.Add(sklepSpodnie.ElementAt(wybrany));
+                    Bohater.Instancja.Zloto -= sklepSpodnie.ElementAt(wybrany).Cena;
+                }
+            }
+
+            else if (sklepListBox.ItemsSource == sklepTarcze)
+            {
+                if (Bohater.Instancja.Zloto >= sklepTarcze.ElementAt(wybrany).Cena && Bohater.Instancja.Ekwipunek.Contains(sklepTarcze.ElementAt(wybrany)) == false)
+                {
+                    Bohater.Instancja.Ekwipunek.Add(sklepTarcze.ElementAt(wybrany));
+                    Bohater.Instancja.Zloto -= sklepTarcze.ElementAt(wybrany).Cena;
+                }
+            }
+            else if (sklepListBox.ItemsSource == sklepButy)
+            {
+                if (Bohater.Instancja.Zloto >= sklepButy.ElementAt(wybrany).Cena && Bohater.Instancja.Ekwipunek.Contains(sklepButy.ElementAt(wybrany)) == false)
+                {
+                    Bohater.Instancja.Ekwipunek.Add(sklepButy.ElementAt(wybrany));
+                    Bohater.Instancja.Zloto -= sklepButy.ElementAt(wybrany).Cena;
+                }
+            }
+        }
     }
 }
+
