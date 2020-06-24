@@ -33,7 +33,7 @@ namespace RPG
         Potwór potwor;
         
 
-        public ObservableCollection<Użytkowe> posiadanePoty = new ObservableCollection<Użytkowe>();
+        public ObservableCollection<Przedmiot> posiadanePoty = new ObservableCollection<Przedmiot>();
         WalkaClass walkaClass = new WalkaClass();
 
         public Walka()
@@ -50,7 +50,8 @@ namespace RPG
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
-            posiadanePoty = (ObservableCollection<Użytkowe>)e.Parameter;
+            posiadanePoty = (ObservableCollection<Przedmiot>)e.Parameter;
+            PotekListBox.ItemsSource = posiadanePoty;
         }
 
         private void znajdzPotwora()
@@ -118,7 +119,16 @@ namespace RPG
                     case rodzajPoty.Zycia:
                         if (Bohater.Instancja.Zycie < 100)
                         {
-                            Bohater.Instancja.Zycie += potka.bonusZycie;
+                            if (Bohater.Instancja.Zycie + potka.bonusZycie <= 100)
+                            {
+
+                                Bohater.Instancja.Zycie += potka.bonusZycie;
+                            }
+                            else
+                            {
+                                Bohater.Instancja.Zycie = 100;
+                            }
+                            posiadanePoty.Remove(potka);
                         }
                         else
                         {
@@ -133,6 +143,7 @@ namespace RPG
                         else
                         {
                             walkaClass.PotkaNiesmiertelnosci = potka;
+                            posiadanePoty.Remove(potka);
                         }
                         break;
                     case rodzajPoty.Trafienia:
@@ -143,6 +154,7 @@ namespace RPG
                         else
                         {
                             walkaClass.PotkaTrafienia = potka;
+                            posiadanePoty.Remove(potka);
                         }
                         break;
                     case rodzajPoty.Sily:
@@ -153,9 +165,11 @@ namespace RPG
                         else
                         {
                             walkaClass.PotkaSily = potka;
+                            posiadanePoty.Remove(potka);
                         }
                         break;
                 }
+                
             }
         }
 

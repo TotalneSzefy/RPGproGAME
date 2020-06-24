@@ -76,7 +76,7 @@
                 <DataTemplate>
                     <StackPanel Height="100">
                         <RelativePanel>
-                            <Image x:Name="Ikona" Source="{Binding SciezkaIkony}" RelativePanel.RightOf="NazwaPrzedmiotu" Height="100" Width="100" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="45,0,0,0"/>
+                            <Image x:Name="Ikona" Source="{Binding SciezkaIkony}" Height="100" Width="100" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="45,0,0,0"/>
                         </RelativePanel>
                     </StackPanel>
                 </DataTemplate>
